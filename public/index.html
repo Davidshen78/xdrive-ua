@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Відпочивай з Драйвом! Мережа прокатів гірськолижного спорядження у Карпатах. Буковель, Яблуниця, Поляниця, Татарів, Яремча.">
+<meta property="og:title" content="X-drive — Прокат лиж у Карпатах">
+<meta property="og:description" content="Прокат лиж, сноубордів та гірськолижного спорядження. Без штрафів за поломку. Відповідь за 15 хвилин.">
+<title>X-drive — Прокат лиж у Карпатах</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎿</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--night:#0D1B2A;--night2:#1A2E45;--night3:#243D5C;--ice:#5BAFE8;--ice2:#B8DDF5;--teal:#1D9E75;--white:#ffffff}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--night);color:var(--white);line-height:1.6;min-height:100vh}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(13,27,42,0.96);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(91,175,232,0.15);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:700;color:var(--white);text-decoration:none}
+.nav-logo-icon{width:34px;height:34px;background:var(--ice);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a:hover{color:var(--ice)}
+.nav-cta{background:var(--ice);color:var(--night);border:none;border-radius:8px;padding:8px 18px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;transition:opacity .2s}
+.nav-cta:hover{opacity:.88}
+.nav-burger{display:none;background:none;border:none;color:var(--white);font-size:24px;cursor:pointer}
+.nav-mobile{display:none;flex-direction:column;gap:1rem;padding:1rem 1.5rem;background:var(--night2);border-bottom:0.5px solid rgba(91,175,232,0.15)}
+.nav-mobile.open{display:flex}
+.nav-mobile a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:15px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;min-height:520px;display:flex;align-items:center;justify-content:center}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%}
+.hero-content{position:relative;z-index:2;text-align:center;padding:3rem 1.5rem;max-width:680px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(91,175,232,0.18);border:0.5px solid rgba(91,175,232,0.4);border-radius:20px;padding:6px 16px;font-size:13px;color:var(--ice2);margin-bottom:1.25rem}
+.hero h1{font-size:clamp(28px,5vw,46px);font-weight:700;line-height:1.15;margin-bottom:.75rem}
+.hero h1 span{color:var(--ice)}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.75);margin-bottom:2rem}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--ice);color:var(--night);border:none;border-radius:10px;padding:14px 28px;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:opacity .2s}
+.btn-primary:hover{opacity:.88}
+.btn-outline{background:rgba(255,255,255,0.1);color:var(--white);border:0.5px solid rgba(255,255,255,0.3);border-radius:10px;padding:14px 28px;font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .2s}
+.btn-outline:hover{background:rgba(255,255,255,0.18)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;padding:2rem 1.5rem;max-width:900px;margin:0 auto}
+.stat{background:var(--night2);border:0.5px solid rgba(91,175,232,0.2);border-radius:12px;padding:1.25rem;text-align:center}
+.stat-num{font-size:28px;font-weight:700;color:var(--ice)}
+.stat-label{font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px}
+
+/* SECTION */
+.section{padding:3rem 1.5rem;max-width:960px;margin:0 auto}
+.section-label{font-size:12px;color:var(--ice);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.5rem}
+.section-title{font-size:clamp(20px,3vw,28px);font-weight:700;margin-bottom:1.5rem}
+.divider{height:0.5px;background:rgba(91,175,232,0.1)}
+
+/* PACKAGES */
+.pkg-tabs{display:flex;gap:8px;margin-bottom:1.5rem;flex-wrap:wrap}
+.pkg-tab{padding:9px 20px;border-radius:20px;border:0.5px solid rgba(91,175,232,0.25);background:var(--night2);color:rgba(255,255,255,0.6);font-size:14px;cursor:pointer;transition:all .2s}
+.pkg-tab.active,.pkg-tab:hover{background:rgba(91,175,232,0.15);border-color:var(--ice);color:var(--ice2)}
+.pkg-grid{display:none;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.pkg-grid.active{display:grid}
+.pkg-card{background:var(--night2);border:0.5px solid rgba(91,175,232,0.2);border-radius:14px;padding:1.5rem;position:relative;transition:border-color .2s,transform .2s}
+.pkg-card:hover{border-color:var(--ice);transform:translateY(-2px)}
+.pkg-card.featured{border:2px solid var(--ice)}
+.pkg-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--ice);color:var(--night);font-size:11px;font-weight:700;padding:3px 12px;border-radius:10px;white-space:nowrap}
+.pkg-icon{font-size:28px;color:var(--ice);margin-bottom:.75rem}
+.pkg-name{font-size:15px;font-weight:700;margin-bottom:4px}
+.pkg-price{font-size:28px;font-weight:700;color:var(--ice)}
+.pkg-unit{font-size:12px;color:rgba(255,255,255,0.4);font-weight:400}
+.pkg-items{margin-top:.75rem;padding-top:.75rem;border-top:0.5px solid rgba(91,175,232,0.15)}
+.pkg-item{font-size:13px;color:rgba(255,255,255,0.7);display:flex;align-items:center;gap:6px;margin-bottom:5px}
+.pkg-item i{color:var(--teal);font-size:14px}
+
+/* LOCATIONS */
+.loc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.loc-card{background:var(--night2);border:0.5px solid rgba(91,175,232,0.18);border-radius:12px;padding:1.25rem;text-align:center;cursor:pointer;transition:all .2s;text-decoration:none;color:var(--white);display:block}
+.loc-card:hover{border-color:var(--ice);background:rgba(91,175,232,0.1)}
+.loc-card i{font-size:26px;color:var(--ice);display:block;margin-bottom:.5rem}
+.loc-name{font-size:14px;font-weight:700}
+.loc-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px}
+
+/* ADVANTAGES */
+.adv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.adv-card{background:var(--night2);border:0.5px solid rgba(91,175,232,0.15);border-radius:12px;padding:1.25rem;display:flex;gap:14px;align-items:flex-start}
+.adv-icon{width:42px;height:42px;border-radius:10px;background:rgba(91,175,232,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.adv-icon i{font-size:20px;color:var(--ice)}
+.adv-title{font-size:14px;font-weight:700;margin-bottom:4px}
+.adv-desc{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.5}
+
+/* FORM */
+.form-wrapper{background:var(--night2);border:0.5px solid rgba(91,175,232,0.2);border-radius:16px;padding:2rem;max-width:700px;margin:0 auto}
+.form-header{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem}
+.tg-icon{width:44px;height:44px;background:#2AABEE;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tg-icon i{font-size:22px;color:#fff}
+.fh-title{font-size:16px;font-weight:700}
+.fh-sub{font-size:13px;color:rgba(255,255,255,0.45)}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;background:var(--night3);border:0.5px solid rgba(91,175,232,0.25);border-radius:10px;padding:12px 14px;font-size:15px;color:var(--white);font-family:inherit;outline:none;transition:border-color .2s;appearance:none}
+.field input::placeholder{color:rgba(255,255,255,0.2)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ice)}
+.field select option{background:#1A2E45}
+.field textarea{resize:none;line-height:1.6}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chip-group{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:8px 16px;border-radius:20px;border:0.5px solid rgba(91,175,232,0.25);background:var(--night3);color:rgba(255,255,255,0.6);font-size:13px;cursor:pointer;transition:all .2s}
+.chip:hover{border-color:var(--ice);color:var(--ice)}
+.chip.sel{background:rgba(91,175,232,0.18);border-color:var(--ice);color:var(--ice2)}
+.price-box{background:rgba(91,175,232,0.07);border:0.5px solid rgba(91,175,232,0.22);border-radius:10px;padding:.9rem 1.1rem;margin:.25rem 0 .5rem}
+.submit-btn{width:100%;margin-top:1.25rem;padding:15px;background:var(--ice);color:var(--night);border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:opacity .2s}
+.submit-btn:hover{opacity:.88}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed}
+.error-msg{font-size:13px;color:#E24B4A;margin-top:.75rem;display:none;align-items:center;gap:6px}
+.success-box{display:none;flex-direction:column;align-items:center;text-align:center;padding:2.5rem 1rem}
+.success-box.show{display:flex}
+.success-icon{width:64px;height:64px;border-radius:50%;background:rgba(29,158,117,0.18);border:0.5px solid rgba(29,158,117,0.4);display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.success-icon i{font-size:32px;color:var(--teal)}
+.success-title{font-size:20px;font-weight:700;margin-bottom:.5rem}
+.success-sub{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7}
+
+/* FOOTER */
+footer{background:var(--night2);border-top:0.5px solid rgba(91,175,232,0.12);padding:2rem 1.5rem;margin-top:3rem}
+.footer-inner{max-width:960px;margin:0 auto}
+.footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:1.5rem}
+.footer-logo{font-size:20px;font-weight:700;color:var(--white);margin-bottom:.5rem}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,0.4)}
+.footer-links h4{font-size:12px;font-weight:700;color:rgba(255,255,255,0.4);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.5px}
+.footer-links a{display:block;font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;margin-bottom:.4rem}
+.footer-links a:hover{color:var(--ice)}
+.footer-contacts a{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ice2);text-decoration:none;margin-bottom:.5rem}
+.footer-contacts a:hover{color:var(--ice)}
+.footer-bottom{border-top:0.5px solid rgba(91,175,232,0.1);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.25)}
+
+@media(max-width:640px){
+  .nav-links{display:none}
+  .nav-burger{display:block}
+  .field-row{grid-template-columns:1fr}
+  .form-wrapper{padding:1.25rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-icon"><i class="ti ti-mountain" style="color:#0D1B2A;font-size:20px"></i></div>
+    X-drive
+  </a>
+  <div class="nav-links">
+    <a href="#packages">Ціни</a>
+    <a href="#locations">Локації</a>
+    <a href="#advantages">Переваги</a>
+    <a href="https://x-drive.ua/service" target="_blank">Сервіс</a>
+    <a href="#form" class="nav-cta"><i class="ti ti-brand-telegram" style="font-size:15px;margin-right:4px"></i>Замовити</a>
+  </div>
+  <button class="nav-burger" onclick="toggleMenu()" aria-label="Меню"><i class="ti ti-menu-2"></i></button>
+</nav>
+<div class="nav-mobile" id="nav-mobile">
+  <a href="#packages" onclick="toggleMenu()">Ціни на прокат</a>
+  <a href="#locations" onclick="toggleMenu()">Локації</a>
+  <a href="#advantages" onclick="toggleMenu()">Переваги</a>
+  <a href="https://x-drive.ua/service" onclick="toggleMenu()">Сервіс лиж</a>
+  <a href="#form" onclick="toggleMenu()" style="color:#5BAFE8;font-weight:700">🎿 Замовити прокат</a>
+</div>
+
+<section class="hero">
+  <svg class="hero-bg" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <rect width="1440" height="520" fill="#0D1B2A"/>
+    <circle cx="100" cy="60" r="2.5" fill="rgba(255,255,255,0.6)"/>
+    <circle cx="300" cy="35" r="2" fill="rgba(255,255,255,0.5)"/>
+    <circle cx="520" cy="55" r="3" fill="rgba(255,255,255,0.65)"/>
+    <circle cx="720" cy="25" r="2" fill="rgba(255,255,255,0.4)"/>
+    <circle cx="950" cy="45" r="2.5" fill="rgba(255,255,255,0.55)"/>
+    <circle cx="1150" cy="30" r="2" fill="rgba(255,255,255,0.5)"/>
+    <circle cx="1380" cy="55" r="2" fill="rgba(255,255,255,0.45)"/>
+    <circle cx="220" cy="80" r="1.5" fill="rgba(255,255,255,0.35)"/>
+    <circle cx="800" cy="15" r="1.5" fill="rgba(255,255,255,0.4)"/>
+    <polygon points="0,520 120,280 240,520" fill="#142336"/>
+    <polygon points="80,520 220,200 370,520" fill="#1A2E45"/>
+    <polygon points="200,520 380,160 570,520" fill="#1F3A55"/>
+    <polygon points="400,520 580,220 760,520" fill="#1A2E45"/>
+    <polygon points="600,520 800,180 1000,520" fill="#162C42"/>
+    <polygon points="800,520 1000,200 1200,520" fill="#1F3A55"/>
+    <polygon points="1000,520 1200,240 1440,520" fill="#1A2E45"/>
+    <polygon points="220,200 258,200 280,230 265,520 200,520" fill="rgba(255,255,255,0.055)"/>
+    <polygon points="380,160 418,160 440,195 420,520 375,520" fill="rgba(255,255,255,0.065)"/>
+    <polygon points="800,180 840,178 860,215 840,520 795,520" fill="rgba(255,255,255,0.06)"/>
+    <rect y="460" width="1440" height="60" fill="#0A1520" opacity=".75"/>
+    <text x="720" y="492" text-anchor="middle" font-size="13" fill="rgba(91,175,232,0.5)" font-family="sans-serif" letter-spacing="3">● БУКОВЕЛЬ  ●  ЯБЛУНИЦЯ  ●  ПОЛЯНИЦЯ  ●  ТАТАРІВ  ●  ЯРЕМЧА  ●</text>
+  </svg>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="ti ti-award" style="font-size:14px"></i> Працюємо з 1994 року</div>
+    <h1>Лижі та сноуборди<br><span>в Карпатах</span></h1>
+    <p class="hero-sub">Відпочивай з Драйвом! 5 точок прокату · без штрафів за поломку · відповідь за 15 хв</p>
+    <div class="hero-btns">
+      <a href="#form" class="btn-primary"><i class="ti ti-send" style="font-size:16px"></i>Замовити прокат</a>
+      <a href="#packages" class="btn-outline"><i class="ti ti-list" style="font-size:16px"></i>Переглянути ціни</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Років на ринку</div></div>
+  <div class="stat"><div class="stat-num">5</div><div class="stat-label">Точок прокату</div></div>
+  <div class="stat"><div class="stat-num">45</div><div class="stat-label">Клієнтів/годину</div></div>
+  <div class="stat"><div class="stat-num">0 грн</div><div class="stat-label">За випадкову поломку</div></div>
+</div>
+
+<div class="divider"></div>
+
+<section class="section" id="packages">
+  <div class="section-label">Оренда спорядження</div>
+  <div class="section-title">Оберіть свій комплект</div>
+  <div class="pkg-tabs">
+    <button class="pkg-tab active" onclick="showPkg('ski',this)"><i class="ti ti-mountain" style="font-size:14px;margin-right:5px"></i>Гірські лижі</button>
+    <button class="pkg-tab" onclick="showPkg('snow',this)"><i class="ti ti-snowflake" style="font-size:14px;margin-right:5px"></i>Сноуборд</button>
+    <button class="pkg-tab" onclick="showPkg('kids',this)"><i class="ti ti-heart" style="font-size:14px;margin-right:5px"></i>Дитячі</button>
+    <button class="pkg-tab" onclick="showPkg('other',this)"><i class="ti ti-trees" style="font-size:14px;margin-right:5px"></i>Бігові / Скітур</button>
+  </div>
+  <div class="pkg-grid active" id="pkg-ski">
+    <div class="pkg-card"><div class="pkg-icon"><i class="ti ti-mountain"></i></div><div class="pkg-name">Стандарт</div><div class="pkg-price">400 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Лижі</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div><div class="pkg-item"><i class="ti ti-check"></i>Палиці</div></div></div>
+    <div class="pkg-card featured"><div class="pkg-badge">Найпопулярніший</div><div class="pkg-icon"><i class="ti ti-star"></i></div><div class="pkg-name">Преміум</div><div class="pkg-price">500 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Лижі преміум</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div><div class="pkg-item"><i class="ti ti-check"></i>Палиці</div></div></div>
+    <div class="pkg-card"><div class="pkg-icon"><i class="ti ti-trophy"></i></div><div class="pkg-name">Топ</div><div class="pkg-price">700 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Лижі топ-клас</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div><div class="pkg-item"><i class="ti ti-check"></i>Палиці</div></div></div>
+  </div>
+  <div class="pkg-grid" id="pkg-snow">
+    <div class="pkg-card"><div class="pkg-icon"><i class="ti ti-snowflake"></i></div><div class="pkg-name">Сноуборд Стандарт</div><div class="pkg-price">400 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Сноуборд</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div></div></div>
+    <div class="pkg-card featured"><div class="pkg-badge">Топ вибір</div><div class="pkg-icon"><i class="ti ti-star"></i></div><div class="pkg-name">Сноуборд Преміум</div><div class="pkg-price">500 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Сноуборд преміум</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div></div></div>
+    <div class="pkg-card"><div class="pkg-icon"><i class="ti ti-trophy"></i></div><div class="pkg-name">Сноуборд Топ</div><div class="pkg-price">700 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Сноуборд топ</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div></div></div>
+  </div>
+  <div class="pkg-grid" id="pkg-kids">
+    <div class="pkg-card featured"><div class="pkg-badge">Для дітей</div><div class="pkg-icon"><i class="ti ti-heart"></i></div><div class="pkg-name">Дитячі лижі Стандарт</div><div class="pkg-price">300 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Дитячі лижі</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div><div class="pkg-item"><i class="ti ti-check"></i>Палиці</div></div></div>
+    <div class="pkg-card"><div class="pkg-icon"><i class="ti ti-star"></i></div><div class="pkg-name">Дитячі лижі Преміум</div><div class="pkg-price">400 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Лижі преміум дит.</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div><div class="pkg-item"><i class="ti ti-check"></i>Палиці</div></div></div>
+    <div class="pkg-card"><div class="pkg-icon"><i class="ti ti-snowflake"></i></div><div class="pkg-name">Сноуборд дитячий</div><div class="pkg-price">300 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Сноуборд дитячий</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div></div></div>
+  </div>
+  <div class="pkg-grid" id="pkg-other">
+    <div class="pkg-card"><div class="pkg-icon"><i class="ti ti-trees"></i></div><div class="pkg-name">Бігові лижі</div><div class="pkg-price">700 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Бігові лижі</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Палиці</div></div></div>
+    <div class="pkg-card featured"><div class="pkg-badge">Ексклюзив</div><div class="pkg-icon"><i class="ti ti-compass"></i></div><div class="pkg-name">Скітур</div><div class="pkg-price">900 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Скітурні лижі</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Кріплення</div><div class="pkg-item"><i class="ti ti-check"></i>Камуси</div></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" id="locations">
+  <div class="section-label">Де нас знайти</div>
+  <div class="section-title">Наші точки прокату</div>
+  <div class="loc-grid">
+    <a class="loc-card" href="https://goo.gl/maps/j9XYL4hxrbANh6487" target="_blank"><i class="ti ti-map-pin"></i><div class="loc-name">Буковель</div><div class="loc-sub">Головний курорт</div></a>
+    <a class="loc-card" href="https://x-drive.ua/location" target="_blank"><i class="ti ti-map-pin"></i><div class="loc-name">Яблуниця</div><div class="loc-sub">Магазин + прокат</div></a>
+    <a class="loc-card" href="https://x-drive.ua/location" target="_blank"><i class="ti ti-map-pin"></i><div class="loc-name">Поляниця</div><div class="loc-sub">Прокат</div></a>
+    <a class="loc-card" href="https://x-drive.ua/location" target="_blank"><i class="ti ti-map-pin"></i><div class="loc-name">Татарів</div><div class="loc-sub">Прокат + магазин</div></a>
+    <a class="loc-card" href="https://x-drive.ua/location" target="_blank"><i class="ti ti-map-pin"></i><div class="loc-name">Яремча</div><div class="loc-sub">Прокат + магазин</div></a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" id="advantages">
+  <div class="section-label">Наші переваги</div>
+  <div class="section-title">Чому обирають X-drive?</div>
+  <div class="adv-grid">
+    <div class="adv-card"><div class="adv-icon"><i class="ti ti-shield-check"></i></div><div><div class="adv-title">0 грн за поломку</div><div class="adv-desc">Ремонт і заміна спорядження за рахунок прокату — без жодних штрафів</div></div></div>
+    <div class="adv-card"><div class="adv-icon"><i class="ti ti-tools"></i></div><div><div class="adv-title">Топовий сервіс</div><div class="adv-desc">Montana (Швейцарія) та Reichmann (Німеччина) — найкращі верстати</div></div></div>
+    <div class="adv-card"><div class="adv-icon"><i class="ti ti-clock"></i></div><div><div class="adv-title">45 клієнтів/годину</div><div class="adv-desc">Швидке обслуговування без черг — цінуємо ваш час на схилах</div></div></div>
+    <div class="adv-card"><div class="adv-icon"><i class="ti ti-discount"></i></div><div><div class="adv-title">Знижки та акції</div><div class="adv-desc">Для груп, захисників, постійних клієнтів та корпоративного відпочинку</div></div></div>
+    <div class="adv-card"><div class="adv-icon"><i class="ti ti-parking"></i></div><div><div class="adv-title">Просторе паркування</div><div class="adv-desc">Зручні місця для автомобілів біля кожної точки прокату</div></div></div>
+    <div class="adv-card"><div class="adv-icon"><i class="ti ti-backpack"></i></div><div><div class="adv-title">Зберігання речей</div><div class="adv-desc">Залиш особисті речі у прокаті поки катаєшся на схилах</div></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" id="form" style="padding-bottom:4rem">
+  <div class="section-label">Онлайн-заявка</div>
+  <div class="section-title">Замовити прокат</div>
+  <div class="form-wrapper">
+    <div class="form-header">
+      <div class="tg-icon"><i class="ti ti-brand-telegram"></i></div>
+      <div>
+        <div class="fh-title">Заявка надходить прямо в Telegram</div>
+        <div class="fh-sub">Менеджер зв'яжеться з вами протягом 15 хвилин</div>
+      </div>
+    </div>
+    <div id="form-body">
+      <div class="field-row">
+        <div class="field"><label>Ваше ім'я *</label><input type="text" id="f-name" placeholder="Олексій"></div>
+        <div class="field"><label>Телефон / Telegram *</label><input type="tel" id="f-phone" placeholder="+380__________"></div>
+      </div>
+      <div class="field">
+        <label>Комплект</label>
+        <select id="f-pkg" onchange="updatePreview()">
+          <option value="ski-std" data-price="400">Лижі Стандарт — 400 грн/день</option>
+          <option value="ski-prm" data-price="500">Лижі Преміум — 500 грн/день</option>
+          <option value="ski-top" data-price="700">Лижі Топ — 700 грн/день</option>
+          <option value="snow-std" data-price="400">Сноуборд Стандарт — 400 грн/день</option>
+          <option value="snow-prm" data-price="500">Сноуборд Преміум — 500 грн/день</option>
+          <option value="snow-top" data-price="700">Сноуборд Топ — 700 грн/день</option>
+          <option value="kids-ski" data-price="300">Дитячі лижі Стандарт — 300 грн/день</option>
+          <option value="kids-prm" data-price="400">Дитячі лижі Преміум — 400 грн/день</option>
+          <option value="kids-snow" data-price="300">Сноуборд дитячий — 300 грн/день</option>
+          <option value="cross" data-price="700">Бігові лижі — 700 грн/день</option>
+          <option value="skitour" data-price="900">Скітур — 900 грн/день</option>
+        </select>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Дата заїзду</label><input type="date" id="f-date"></div>
+        <div class="field"><label>Кількість днів</label>
+          <select id="f-days" onchange="updatePreview()">
+            <option value="0.5">Пів дня</option>
+            <option value="1" selected>1 день</option>
+            <option value="2">2 дні</option>
+            <option value="3">3 дні</option>
+            <option value="4">4 дні</option>
+            <option value="5">5 днів</option>
+            <option value="6">6 днів</option>
+            <option value="7">7 днів</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label>Локація прокату</label>
+        <select id="f-loc" onchange="updatePreview()">
+          <option>Буковель</option><option>Яблуниця</option><option>Поляниця</option><option>Татарів</option><option>Яремча</option>
+        </select>
+      </div>
+      <div class="field"><label>Рівень катання</label>
+        <div class="chip-group">
+          <div class="chip" onclick="selChip(this)">Новачок</div>
+          <div class="chip sel" onclick="selChip(this)">Середній</div>
+          <div class="chip" onclick="selChip(this)">Досвідчений</div>
+          <div class="chip" onclick="selChip(this)">Професіонал</div>
+        </div>
+      </div>
+      <div class="field"><label>Кількість людей та побажання</label>
+        <textarea id="f-note" rows="3" placeholder="Напр.: 2 дорослих + 1 дитина 8 років, зріст 170 см, потрібні костюми..."></textarea>
+      </div>
+      <div class="price-box"><div id="price-preview" style="font-size:14px;color:#B8DDF5;line-height:1.8"></div></div>
+      <div class="error-msg" id="err-msg"><i class="ti ti-alert-circle"></i><span id="err-text"></span></div>
+      <button class="submit-btn" id="submit-btn" onclick="submitForm()">
+        <i class="ti ti-brand-telegram" style="font-size:20px"></i>
+        Надіслати заявку в Telegram
+      </button>
+    </div>
+    <div class="success-box" id="success-box">
+      <div class="success-icon"><i class="ti ti-check"></i></div>
+      <div class="success-title">Заявку надіслано! 🎿</div>
+      <div class="success-sub">Ваша заявка успішно відправлена менеджеру X-drive.<br>Очікуйте дзвінка або повідомлення найближчим часом.<br><br><span style="color:#5BAFE8">📞 098 786 3830 · 067 778 5878</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">🎿 X-drive</div>
+        <div class="footer-tagline">Відпочивай з Драйвом!<br>Мережа прокатів з 1994 року.</div>
+      </div>
+      <div class="footer-links">
+        <h4>Навігація</h4>
+        <a href="#packages">Ціни та комплекти</a>
+        <a href="#locations">Локації</a>
+        <a href="#advantages">Переваги</a>
+        <a href="https://x-drive.ua/service" target="_blank">Сервіс лиж</a>
+        <a href="https://x-drive.ua/choose-ski" target="_blank">Як вибрати лижі</a>
+      </div>
+      <div class="footer-contacts footer-links">
+        <h4>Контакти</h4>
+        <a href="tel:0987863830"><i class="ti ti-phone" style="font-size:15px"></i>098 786 3830</a>
+        <a href="tel:0677785878"><i class="ti ti-phone" style="font-size:15px"></i>067 778 5878</a>
+        <a href="https://t.me/joinchat/DZviZEswGDShHZWzNrR2mQ" target="_blank"><i class="ti ti-brand-telegram" style="font-size:15px"></i>Telegram-канал</a>
+        <a href="https://g.page/r/CW6mxi8AGC5dEAg/review" target="_blank"><i class="ti ti-star" style="font-size:15px"></i>Залишити відгук</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 X-drive® · Всі права захищені</div>
+      <div class="footer-copy">Буковель · Яблуниця · Поляниця · Татарів · Яремча</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const TG_TOKEN='8821919239:AAE3WsICaw24iGmBUnEECpxFPhjUour_hG4';
+const TG_CHAT='1314734890';
+const TG_API='https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage';
+
+function toggleMenu(){document.getElementById('nav-mobile').classList.toggle('open')}
+function showPkg(type,btn){document.querySelectorAll('.pkg-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.pkg-grid').forEach(g=>g.classList.remove('active'));btn.classList.add('active');document.getElementById('pkg-'+type).classList.add('active')}
+function selChip(el){document.querySelectorAll('.chip').forEach(c=>c.classList.remove('sel'));el.classList.add('sel')}
+
+function calcTotal(price,days){
+  const m=[1,2,2.85,3.6,4.25,4.8,5.25];
+  if(days===0.5)return Math.round(price*0.75);
+  const idx=Math.min(Math.round(days)-1,m.length-1);
+  return Math.round(price*m[idx]);
+}
+
+function updatePreview(){
+  const sel=document.getElementById('f-pkg');
+  const price=parseInt(sel.options[sel.selectedIndex].dataset.price)||400;
+  const label=sel.options[sel.selectedIndex].text.split('—')[0].trim();
+  const days=parseFloat(document.getElementById('f-days').value)||1;
+  const loc=document.getElementById('f-loc').value;
+  const total=calcTotal(price,days);
+  const dl=days===0.5?'пів дня':days+(days===1?' день':days<5?' дні':' днів');
+  document.getElementById('price-preview').innerHTML=
+    '<strong style="color:#fff">'+label+'</strong> · '+dl+' · '+loc+'<br>'+
+    '<span style="font-size:22px;font-weight:700;color:#5BAFE8">~'+total.toLocaleString('uk-UA')+' грн</span>'+
+    '<span style="color:rgba(255,255,255,0.3);font-size:12px"> (без застави)</span>';
+}
+
+async function submitForm(){
+  const name=document.getElementById('f-name').value.trim();
+  const phone=document.getElementById('f-phone').value.trim();
+  const errEl=document.getElementById('err-msg');
+  const errTx=document.getElementById('err-text');
+  errEl.style.display='none';
+  if(!name){errTx.textContent="Будь ласка, введіть ваше ім'я";errEl.style.display='flex';return}
+  if(!phone){errTx.textContent='Будь ласка, введіть номер телефону';errEl.style.display='flex';return}
+  const sel=document.getElementById('f-pkg');
+  const price=parseInt(sel.options[sel.selectedIndex].dataset.price)||400;
+  const label=sel.options[sel.selectedIndex].text.split('—')[0].trim();
+  const date=document.getElementById('f-date').value;
+  const days=parseFloat(document.getElementById('f-days').value)||1;
+  const loc=document.getElementById('f-loc').value;
+  const note=document.getElementById('f-note').value.trim();
+  const level=document.querySelector('.chip.sel')?.textContent||'—';
+  const total=calcTotal(price,days);
+  const dl=days===0.5?'Пів дня':days+(days===1?' день':days<5?' дні':' днів');
+  const text='🎿 *Нова заявка X-drive*\n\n'+'👤 Ім\'я: '+name+'\n'+'📞 Телефон: '+phone+'\n'+(date?'📅 Дата заїзду: '+date+'\n':'')+'⏱ Термін: '+dl+'\n'+'📍 Локація: '+loc+'\n'+'🎿 Комплект: '+label+'\n'+'⭐ Рівень: '+level+'\n'+'💰 Орієнтовна вартість: ~'+total.toLocaleString('uk-UA')+' грн\n'+(note?'📝 Побажання: '+note+'\n':'')+'\n🌐 Заявка з сайту x-drive.ua';
+  const btn=document.getElementById('submit-btn');
+  btn.disabled=true;
+  btn.innerHTML='<i class="ti ti-loader-2" style="font-size:20px"></i> Надсилаємо...';
+  try{
+    const resp=await fetch(TG_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:TG_CHAT,text:text,parse_mode:'Markdown'})});
+    const data=await resp.json();
+    if(data.ok){document.getElementById('form-body').style.display='none';document.getElementById('success-box').classList.add('show')}
+    else{errTx.textContent='Помилка: '+(data.description||'спробуйте ще раз');errEl.style.display='flex';btn.disabled=false;btn.innerHTML='<i class="ti ti-brand-telegram" style="font-size:20px"></i> Надіслати заявку в Telegram'}
+  }catch(e){errTx.textContent='Помилка з\'єднання. Спробуйте ще раз.';errEl.style.display='flex';btn.disabled=false;btn.innerHTML='<i class="ti ti-brand-telegram" style="font-size:20px"></i> Надіслати заявку в Telegram'}
+}
+updatePreview();
+</script>
+</body>
+</html>
