@@ -4,30 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Відпочивай з Драйвом! Мережа прокатів гірськолижного спорядження у Карпатах.">
-<meta property="og:title" content="X-drive — Прокат лиж у Карпатах">
-<meta property="og:image" content="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1200">
 <title>X-drive — Прокат лиж у Карпатах</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎿</text></svg>">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --night:#060E1A;--night2:#0F2035;--night3:#182E48;
-  --ice:#4DB8FF;--ice2:#A8DCFF;--ice3:#D6F0FF;
-  --gold:#FFD166;--teal:#06D6A0;--coral:#FF6B6B;
-  --white:#ffffff;
-}
+:root{--night:#060E1A;--night2:#0F2035;--night3:#182E48;--ice:#4DB8FF;--ice2:#A8DCFF;--teal:#06D6A0;--white:#ffffff}
 html{scroll-behavior:smooth}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--night);color:var(--white);line-height:1.6}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(77,184,255,0.12);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:var(--white);text-decoration:none;letter-spacing:-0.5px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(77,184,255,0.12);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:var(--white);text-decoration:none}
 .nav-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#4DB8FF,#0080CC);border-radius:9px;display:flex;align-items:center;justify-content:center}
 .nav-links{display:flex;gap:2rem;align-items:center}
-.nav-links a{color:rgba(255,255,255,0.72);text-decoration:none;font-size:14px;transition:color .2s;font-weight:500}
+.nav-links a{color:rgba(255,255,255,0.72);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
 .nav-links a:hover{color:var(--ice)}
-.nav-cta{background:linear-gradient(135deg,#4DB8FF,#0096E8);color:#060E1A;border:none;border-radius:10px;padding:10px 22px;font-size:14px;font-weight:800;cursor:pointer;text-decoration:none;transition:opacity .2s;letter-spacing:.3px}
+.nav-cta{background:linear-gradient(135deg,#4DB8FF,#0096E8);color:#060E1A;border:none;border-radius:10px;padding:10px 22px;font-size:14px;font-weight:800;cursor:pointer;text-decoration:none;transition:opacity .2s}
 .nav-cta:hover{opacity:.88}
 .nav-burger{display:none;background:none;border:none;color:var(--white);font-size:26px;cursor:pointer}
 .nav-mobile{display:none;flex-direction:column;gap:1rem;padding:1.25rem 2rem;background:rgba(6,14,26,0.97);border-bottom:1px solid rgba(77,184,255,0.1);position:fixed;top:64px;left:0;right:0;z-index:199}
@@ -36,50 +29,44 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.85
 
 /* HERO */
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;padding-top:64px}
-.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
-.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(6,14,26,0.35) 0%,rgba(6,14,26,0.2) 40%,rgba(6,14,26,0.75) 75%,rgba(6,14,26,1) 100%)}
-.hero-overlay2{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(0,80,160,0.3) 0%,transparent 60%)}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;z-index:0}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(6,14,26,0.3) 0%,rgba(6,14,26,0.15) 35%,rgba(6,14,26,0.7) 70%,rgba(6,14,26,1) 100%)}
 .snowflakes{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
-.sf{position:absolute;color:rgba(255,255,255,0.8);font-size:14px;animation:snowfall linear infinite}
+.sf{position:absolute;color:rgba(255,255,255,0.75);animation:snowfall linear infinite}
 @keyframes snowfall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
 .hero-content{position:relative;z-index:3;padding:3rem 2rem 4rem;max-width:1100px;margin:0 auto;width:100%}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(77,184,255,0.18);border:1px solid rgba(77,184,255,0.45);border-radius:24px;padding:7px 18px;font-size:13px;color:var(--ice2);margin-bottom:1.5rem;font-weight:600;letter-spacing:.5px;backdrop-filter:blur(8px)}
-.hero h1{font-size:clamp(36px,6vw,72px);font-weight:900;line-height:1.05;margin-bottom:1rem;letter-spacing:-1.5px;text-shadow:0 4px 32px rgba(0,0,0,0.5)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(77,184,255,0.18);border:1px solid rgba(77,184,255,0.45);border-radius:24px;padding:7px 18px;font-size:13px;color:var(--ice2);margin-bottom:1.5rem;font-weight:600;letter-spacing:.5px}
+.hero h1{font-size:clamp(36px,6vw,70px);font-weight:900;line-height:1.05;margin-bottom:1rem;letter-spacing:-1.5px}
 .hero h1 .accent{background:linear-gradient(135deg,#4DB8FF,#A8DCFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:clamp(15px,2vw,19px);color:rgba(255,255,255,0.82);margin-bottom:2.5rem;max-width:580px;line-height:1.65;text-shadow:0 2px 8px rgba(0,0,0,0.4)}
+.hero-sub{font-size:clamp(15px,2vw,18px);color:rgba(255,255,255,0.82);margin-bottom:2.5rem;max-width:560px;line-height:1.65}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:3rem}
-.btn-primary{background:linear-gradient(135deg,#4DB8FF,#0096E8);color:#060E1A;border:none;border-radius:12px;padding:16px 32px;font-size:16px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 32px rgba(77,184,255,0.35)}
+.btn-primary{background:linear-gradient(135deg,#4DB8FF,#0096E8);color:#060E1A;border:none;border-radius:12px;padding:16px 32px;font-size:16px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all .2s;box-shadow:0 8px 32px rgba(77,184,255,0.35)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(77,184,255,0.5)}
 .btn-outline{background:rgba(255,255,255,0.1);color:var(--white);border:1.5px solid rgba(255,255,255,0.4);border-radius:12px;padding:16px 32px;font-size:16px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all .2s;backdrop-filter:blur(8px)}
-.btn-outline:hover{background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.7)}
+.btn-outline:hover{background:rgba(255,255,255,0.2)}
 .hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap}
-.hstat{text-align:left}
 .hstat-num{font-size:28px;font-weight:900;color:var(--ice);line-height:1;letter-spacing:-1px}
 .hstat-label{font-size:12px;color:rgba(255,255,255,0.55);margin-top:3px;font-weight:500}
 
-/* SCROLL INDICATOR */
-.scroll-down{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:1px;text-transform:uppercase;animation:bounce 2s infinite}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-.scroll-down i{font-size:20px}
-
-/* PHOTO STRIP */
-.photo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:0;max-height:340px;overflow:hidden}
-.photo-strip img{width:100%;height:220px;object-fit:cover;transition:transform .4s}
-.photo-strip img:hover{transform:scale(1.03)}
-.photo-strip .wide{grid-column:span 1}
-
 /* STATS BAR */
-.stats-bar{background:linear-gradient(135deg,#0096E8,#0050A0);padding:2rem}
-.stats-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1.5rem;max-width:960px;margin:0 auto;text-align:center}
-.stat-item .stat-num{font-size:36px;font-weight:900;color:#fff;letter-spacing:-1px}
-.stat-item .stat-label{font-size:13px;color:rgba(255,255,255,0.75);margin-top:4px;font-weight:500}
+.stats-bar{background:linear-gradient(135deg,#0096E8,#0050A0);padding:1.75rem 2rem}
+.stats-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1.25rem;max-width:960px;margin:0 auto;text-align:center}
+.stat-num{font-size:32px;font-weight:900;color:#fff;letter-spacing:-1px}
+.stat-label{font-size:12px;color:rgba(255,255,255,0.75);margin-top:3px;font-weight:500}
 
 /* SECTION */
 .section{padding:4rem 2rem;max-width:1060px;margin:0 auto}
 .sec-chip{display:inline-block;background:rgba(77,184,255,0.12);border:1px solid rgba(77,184,255,0.3);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--ice);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:.75rem}
-.sec-title{font-size:clamp(24px,3.5vw,36px);font-weight:900;margin-bottom:.5rem;letter-spacing:-0.5px}
-.sec-sub{font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:2rem;max-width:520px}
+.sec-title{font-size:clamp(24px,3.5vw,36px);font-weight:900;margin-bottom:.5rem;letter-spacing:-.5px}
+.sec-sub{font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:2rem;max-width:520px}
 .divider{height:1px;background:linear-gradient(to right,transparent,rgba(77,184,255,0.15),transparent)}
+
+/* PHOTO STRIP — виправлена */
+.photo-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px}
+.photo-strip-item{position:relative;overflow:hidden;height:200px}
+.photo-strip-item img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s;display:block}
+.photo-strip-item:hover img{transform:scale(1.05)}
+.strip-label{position:absolute;bottom:0;left:0;right:0;padding:.5rem .75rem;background:linear-gradient(to top,rgba(6,14,26,0.85),transparent);font-size:12px;font-weight:700;color:#fff;letter-spacing:.5px}
 
 /* PACKAGES */
 .pkg-tabs{display:flex;gap:8px;margin-bottom:2rem;flex-wrap:wrap}
@@ -87,15 +74,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.85
 .pkg-tab.active,.pkg-tab:hover{background:rgba(77,184,255,0.15);border-color:var(--ice);color:var(--ice2)}
 .pkg-grid{display:none;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
 .pkg-grid.active{display:grid}
-.pkg-card{background:linear-gradient(145deg,#0F2035,#0A1828);border:1px solid rgba(77,184,255,0.15);border-radius:18px;padding:1.75rem;position:relative;transition:all .3s;overflow:hidden}
-.pkg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(77,184,255,0.3),transparent);opacity:0;transition:opacity .3s}
+.pkg-card{background:linear-gradient(145deg,#0F2035,#0A1828);border:1px solid rgba(77,184,255,0.15);border-radius:18px;padding:1.75rem;position:relative;transition:all .3s}
 .pkg-card:hover{border-color:rgba(77,184,255,0.5);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
-.pkg-card:hover::before{opacity:1}
-.pkg-card.featured{border:2px solid var(--ice);background:linear-gradient(145deg,#0D2540,#071830);box-shadow:0 0 40px rgba(77,184,255,0.12)}
-.pkg-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#4DB8FF,#0096E8);color:#060E1A;font-size:11px;font-weight:800;padding:5px 16px;border-radius:0 0 12px 12px;white-space:nowrap;letter-spacing:.5px}
-.pkg-icon{font-size:32px;color:var(--ice);margin-bottom:1rem;display:block}
-.pkg-name{font-size:16px;font-weight:800;margin-bottom:6px;letter-spacing:-.3px}
-.pkg-price{font-size:32px;font-weight:900;color:var(--ice);line-height:1;letter-spacing:-1px}
+.pkg-card.featured{border:2px solid var(--ice);box-shadow:0 0 40px rgba(77,184,255,0.1)}
+.pkg-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#4DB8FF,#0096E8);color:#060E1A;font-size:11px;font-weight:800;padding:5px 16px;border-radius:0 0 12px 12px;white-space:nowrap}
+.pkg-icon{font-size:30px;color:var(--ice);margin-bottom:1rem;display:block}
+.pkg-name{font-size:16px;font-weight:800;margin-bottom:6px}
+.pkg-price{font-size:30px;font-weight:900;color:var(--ice);line-height:1;letter-spacing:-1px}
 .pkg-unit{font-size:13px;color:rgba(255,255,255,0.4);font-weight:500}
 .pkg-items{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(77,184,255,0.12)}
 .pkg-item{font-size:13px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:8px;margin-bottom:6px;font-weight:500}
@@ -103,44 +88,42 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.85
 .pkg-book{width:100%;margin-top:1.25rem;padding:11px;background:rgba(77,184,255,0.12);color:var(--ice);border:1px solid rgba(77,184,255,0.3);border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s}
 .pkg-book:hover{background:var(--ice);color:#060E1A}
 
-/* PHOTO GALLERY */
-.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:220px 220px;gap:6px;border-radius:20px;overflow:hidden;margin-bottom:0}
-.gallery-item{overflow:hidden;position:relative}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.gallery-item:hover img{transform:scale(1.06)}
-.gallery-item.tall{grid-row:span 2}
-.gallery-label{position:absolute;bottom:0;left:0;right:0;padding:.75rem 1rem;background:linear-gradient(to top,rgba(6,14,26,0.85),transparent);font-size:13px;font-weight:700;color:#fff;letter-spacing:.5px}
+/* GALLERY — виправлена сітка */
+.gallery{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:200px 200px;gap:4px}
+.gi{overflow:hidden;position:relative}
+.gi img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .5s}
+.gi:hover img{transform:scale(1.06)}
+.gi-label{position:absolute;bottom:0;left:0;right:0;padding:.6rem .9rem;background:linear-gradient(to top,rgba(6,14,26,0.9),transparent);font-size:12px;font-weight:700;color:#fff}
+.gi.big{grid-column:1;grid-row:1/3}
 
 /* LOCATIONS */
 .loc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
-.loc-card{background:linear-gradient(145deg,#0F2035,#0A1828);border:1px solid rgba(77,184,255,0.15);border-radius:16px;padding:1.5rem;text-align:center;cursor:pointer;transition:all .3s;text-decoration:none;color:var(--white);display:block;position:relative;overflow:hidden}
-.loc-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(77,184,255,0.08),transparent);opacity:0;transition:opacity .3s}
+.loc-card{background:linear-gradient(145deg,#0F2035,#0A1828);border:1px solid rgba(77,184,255,0.15);border-radius:16px;padding:1.5rem;text-align:center;text-decoration:none;color:var(--white);display:block;transition:all .3s}
 .loc-card:hover{border-color:var(--ice);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
-.loc-card:hover::after{opacity:1}
 .loc-card i{font-size:28px;color:var(--ice);display:block;margin-bottom:.75rem}
 .loc-name{font-size:15px;font-weight:800}
-.loc-sub{font-size:12px;color:rgba(255,255,255,0.45);margin-top:3px;font-weight:500}
+.loc-sub{font-size:12px;color:rgba(255,255,255,0.45);margin-top:3px}
 
 /* ADVANTAGES */
 .adv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .adv-card{background:linear-gradient(145deg,#0F2035,#0A1828);border:1px solid rgba(77,184,255,0.12);border-radius:16px;padding:1.5rem;display:flex;gap:16px;align-items:flex-start;transition:border-color .3s}
 .adv-card:hover{border-color:rgba(77,184,255,0.4)}
-.adv-icon{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,rgba(77,184,255,0.2),rgba(0,150,232,0.1));display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(77,184,255,0.2)}
+.adv-icon{width:46px;height:46px;border-radius:12px;background:rgba(77,184,255,0.12);border:1px solid rgba(77,184,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .adv-icon i{font-size:22px;color:var(--ice)}
 .adv-title{font-size:15px;font-weight:800;margin-bottom:5px}
-.adv-desc{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6;font-weight:500}
+.adv-desc{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6}
 
-/* CTA BANNER */
-.cta-banner{margin:0 2rem 4rem;border-radius:24px;overflow:hidden;position:relative}
-.cta-banner-img{width:100%;height:280px;object-fit:cover;object-position:center 30%}
-.cta-banner-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,14,26,0.9) 0%,rgba(0,80,160,0.7) 100%);display:flex;align-items:center;padding:3rem}
-.cta-content{max-width:560px}
-.cta-content h2{font-size:clamp(22px,3vw,34px);font-weight:900;margin-bottom:.75rem;letter-spacing:-.5px}
-.cta-content p{font-size:15px;color:rgba(255,255,255,0.75);margin-bottom:1.75rem;line-height:1.6}
-.cta-phones{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
-.cta-phone{display:flex;align-items:center;gap:8px;color:var(--ice2);font-size:15px;font-weight:700;text-decoration:none}
+/* CTA BANNER — менший */
+.cta-banner{max-width:1060px;margin:0 auto 0;padding:0 2rem}
+.cta-banner-inner{border-radius:20px;overflow:hidden;position:relative;height:200px}
+.cta-banner-inner img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
+.cta-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,14,26,0.88) 0%,rgba(0,80,160,0.65) 100%);display:flex;align-items:center;padding:2rem 2.5rem;gap:2rem}
+.cta-text h2{font-size:clamp(18px,2.5vw,26px);font-weight:900;margin-bottom:.4rem;letter-spacing:-.3px}
+.cta-text p{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.55}
+.cta-actions{display:flex;flex-direction:column;gap:.6rem;flex-shrink:0}
+.cta-phone{display:flex;align-items:center;gap:7px;color:var(--ice2);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
 .cta-phone:hover{color:var(--ice)}
-.cta-phone i{font-size:18px}
+.cta-phone i{font-size:16px}
 
 /* FORM */
 .form-wrapper{background:linear-gradient(145deg,#0F2035,#0A1828);border:1px solid rgba(77,184,255,0.2);border-radius:20px;padding:2.5rem;max-width:720px;margin:0 auto}
@@ -149,57 +132,56 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.85
 .tg-icon i{font-size:24px;color:#fff}
 .fh-title{font-size:18px;font-weight:900;letter-spacing:-.3px}
 .fh-sub{font-size:13px;color:rgba(255,255,255,0.45);font-weight:500}
-.field{margin-bottom:1.25rem}
-.field label{display:block;font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:7px;font-weight:600;letter-spacing:.3px}
-.field input,.field select,.field textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(77,184,255,0.2);border-radius:12px;padding:13px 16px;font-size:15px;color:var(--white);font-family:inherit;outline:none;transition:all .2s;appearance:none}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:6px;font-weight:700;letter-spacing:.5px}
+.field input,.field select,.field textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(77,184,255,0.2);border-radius:12px;padding:12px 15px;font-size:15px;color:var(--white);font-family:inherit;outline:none;transition:all .2s;appearance:none}
 .field input::placeholder{color:rgba(255,255,255,0.2)}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ice);background:rgba(77,184,255,0.06);box-shadow:0 0 0 3px rgba(77,184,255,0.08)}
 .field select option{background:#0F2035}
 .field textarea{resize:none;line-height:1.6}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .chip-group{display:flex;flex-wrap:wrap;gap:8px}
-.chip{padding:9px 18px;border-radius:24px;border:1.5px solid rgba(77,184,255,0.2);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.6);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
+.chip{padding:8px 16px;border-radius:24px;border:1.5px solid rgba(77,184,255,0.2);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.6);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
 .chip:hover{border-color:var(--ice);color:var(--ice)}
 .chip.sel{background:rgba(77,184,255,0.15);border-color:var(--ice);color:var(--ice2)}
-.price-box{background:rgba(77,184,255,0.07);border:1px solid rgba(77,184,255,0.2);border-radius:12px;padding:1rem 1.25rem;margin:.25rem 0 .5rem}
-.submit-btn{width:100%;margin-top:1.5rem;padding:17px;background:linear-gradient(135deg,#4DB8FF,#0096E8);color:#060E1A;border:none;border-radius:14px;font-size:16px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .2s;box-shadow:0 8px 32px rgba(77,184,255,0.3);letter-spacing:.3px}
+.price-box{background:rgba(77,184,255,0.07);border:1px solid rgba(77,184,255,0.2);border-radius:12px;padding:.9rem 1.1rem;margin:.25rem 0 .5rem}
+.submit-btn{width:100%;margin-top:1.5rem;padding:16px;background:linear-gradient(135deg,#4DB8FF,#0096E8);color:#060E1A;border:none;border-radius:14px;font-size:16px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .2s;box-shadow:0 8px 32px rgba(77,184,255,0.3)}
 .submit-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(77,184,255,0.5)}
 .submit-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
 .error-msg{font-size:13px;color:#FF6B6B;margin-top:.75rem;display:none;align-items:center;gap:6px;font-weight:600}
 .success-box{display:none;flex-direction:column;align-items:center;text-align:center;padding:3rem 1rem}
 .success-box.show{display:flex}
-.success-icon{width:72px;height:72px;border-radius:50%;background:rgba(6,214,160,0.15);border:2px solid rgba(6,214,160,0.4);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;box-shadow:0 0 40px rgba(6,214,160,0.2)}
+.success-icon{width:72px;height:72px;border-radius:50%;background:rgba(6,214,160,0.15);border:2px solid rgba(6,214,160,0.4);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
 .success-icon i{font-size:36px;color:var(--teal)}
 .success-title{font-size:24px;font-weight:900;margin-bottom:.5rem}
 .success-sub{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7}
 
 /* FOOTER */
-footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid rgba(77,184,255,0.1);padding:3rem 2rem 2rem}
+footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid rgba(77,184,255,0.1);padding:3rem 2rem 2rem;margin-top:4rem}
 .footer-inner{max-width:1060px;margin:0 auto}
-.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
-.footer-logo{font-size:22px;font-weight:900;color:var(--white);margin-bottom:.75rem;letter-spacing:-.5px}
-.footer-tagline{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.7;font-weight:500}
-.footer-links h4{font-size:12px;font-weight:800;color:rgba(255,255,255,0.35);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:2rem}
+.footer-logo{font-size:22px;font-weight:900;margin-bottom:.75rem}
+.footer-tagline{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.7}
+.footer-links h4{font-size:11px;font-weight:800;color:rgba(255,255,255,0.3);margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
 .footer-links a{display:block;font-size:14px;color:rgba(255,255,255,0.6);text-decoration:none;margin-bottom:.5rem;font-weight:500;transition:color .2s}
 .footer-links a:hover{color:var(--ice)}
 .footer-contacts a{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ice2);text-decoration:none;margin-bottom:.6rem;font-weight:600;transition:color .2s}
 .footer-contacts a:hover{color:var(--ice)}
-.footer-bottom{border-top:1px solid rgba(77,184,255,0.08);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
-.footer-copy{font-size:12px;color:rgba(255,255,255,0.2);font-weight:500}
+.footer-bottom{border-top:1px solid rgba(77,184,255,0.08);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.2)}
 
 @media(max-width:768px){
-  .nav-links{display:none}
-  .nav-burger{display:block}
+  .nav-links{display:none}.nav-burger{display:block}
   .hero-content{padding:2rem 1.25rem 3rem}
   .hero-stats{gap:1.5rem}
   .photo-strip{grid-template-columns:1fr 1fr}
-  .photo-strip img{height:160px}
+  .photo-strip-item:last-child{display:none}
   .gallery{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px}
-  .gallery-item.tall{grid-row:span 1}
+  .gi.big{grid-column:1 2;grid-row:1}
   .field-row{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr}
-  .cta-banner{margin:0 1rem 3rem}
-  .cta-banner-overlay{padding:2rem}
+  .cta-banner-inner{height:auto}
+  .cta-overlay{flex-direction:column;align-items:flex-start;padding:1.5rem}
   .section{padding:3rem 1.25rem}
   .form-wrapper{padding:1.5rem}
 }
@@ -207,7 +189,6 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">
     <div class="nav-logo-icon"><i class="ti ti-mountain" style="color:#fff;font-size:20px"></i></div>
@@ -233,11 +214,9 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
 <!-- HERO -->
 <section class="hero">
   <img class="hero-bg-img"
-    src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1600&q=85&auto=format"
-    alt="Зимові гори Карпати лижі"
-    loading="eager">
+    src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1600&q=90&auto=format&fit=crop"
+    alt="Зимові гори Карпати" loading="eager">
   <div class="hero-overlay"></div>
-  <div class="hero-overlay2"></div>
   <div class="snowflakes" id="snowflakes"></div>
   <div class="hero-content">
     <div class="hero-badge"><i class="ti ti-award" style="font-size:14px"></i> Мережа прокатів з 1994 року · Карпати</div>
@@ -254,24 +233,32 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
       <div class="hstat"><div class="hstat-num">0₴</div><div class="hstat-label">За поломку</div></div>
     </div>
   </div>
-  <div class="scroll-down"><i class="ti ti-chevrons-down"></i></div>
 </section>
 
 <!-- PHOTO STRIP -->
 <div class="photo-strip">
-  <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=700&q=80&auto=format" alt="Лижі в горах" loading="lazy">
-  <img src="https://images.unsplash.com/photo-1519304352614-ced8e3c32e87?w=700&q=80&auto=format" alt="Сноуборд Карпати" loading="lazy">
-  <img src="https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?w=700&q=80&auto=format" alt="Гірськолижний схил" loading="lazy">
+  <div class="photo-strip-item">
+    <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=700&h=400&fit=crop&auto=format&q=85" alt="Лижник на схилі">
+    <div class="strip-label">🎿 Гірські лижі</div>
+  </div>
+  <div class="photo-strip-item">
+    <img src="https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?w=700&h=400&fit=crop&auto=format&q=85&crop=center" alt="Сноубордист">
+    <div class="strip-label">🏂 Сноуборд</div>
+  </div>
+  <div class="photo-strip-item">
+    <img src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=700&h=400&fit=crop&auto=format&q=85&crop=center" alt="Зимові гори">
+    <div class="strip-label">🏔 Карпати</div>
+  </div>
 </div>
 
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stats-inner">
-    <div class="stat-item"><div class="stat-num">30+</div><div class="stat-label">Років на ринку</div></div>
-    <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">Точок прокату</div></div>
-    <div class="stat-item"><div class="stat-num">45</div><div class="stat-label">Клієнтів / годину</div></div>
-    <div class="stat-item"><div class="stat-num">0 ₴</div><div class="stat-label">За випадкову поломку</div></div>
-    <div class="stat-item"><div class="stat-num">15 хв</div><div class="stat-label">Час відповіді</div></div>
+    <div><div class="stat-num">30+</div><div class="stat-label">Років на ринку</div></div>
+    <div><div class="stat-num">5</div><div class="stat-label">Точок прокату</div></div>
+    <div><div class="stat-num">45</div><div class="stat-label">Клієнтів / годину</div></div>
+    <div><div class="stat-num">0 ₴</div><div class="stat-label">За поломку</div></div>
+    <div><div class="stat-num">15 хв</div><div class="stat-label">Час відповіді</div></div>
   </div>
 </div>
 
@@ -287,43 +274,9 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
     <button class="pkg-tab" onclick="showPkg('other',this)"><i class="ti ti-trees" style="margin-right:6px"></i>Бігові / Скітур</button>
   </div>
   <div class="pkg-grid active" id="pkg-ski">
-    <div class="pkg-card">
-      <i class="pkg-icon ti ti-mountain"></i>
-      <div class="pkg-name">Стандарт</div>
-      <div class="pkg-price">400 <span class="pkg-unit">грн/день</span></div>
-      <div class="pkg-items">
-        <div class="pkg-item"><i class="ti ti-check"></i>Лижі</div>
-        <div class="pkg-item"><i class="ti ti-check"></i>Черевики</div>
-        <div class="pkg-item"><i class="ti ti-check"></i>Шолом</div>
-        <div class="pkg-item"><i class="ti ti-check"></i>Палиці</div>
-      </div>
-      <button class="pkg-book" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Замовити →</button>
-    </div>
-    <div class="pkg-card featured">
-      <div class="pkg-badge">⭐ Найпопулярніший</div>
-      <i class="pkg-icon ti ti-star"></i>
-      <div class="pkg-name">Преміум</div>
-      <div class="pkg-price">500 <span class="pkg-unit">грн/день</span></div>
-      <div class="pkg-items">
-        <div class="pkg-item"><i class="ti ti-check"></i>Лижі преміум-класу</div>
-        <div class="pkg-item"><i class="ti ti-check"></i>Черевики</div>
-        <div class="pkg-item"><i class="ti ti-check"></i>Шолом</div>
-        <div class="pkg-item"><i class="ti ti-check"></i>Палиці</div>
-      </div>
-      <button class="pkg-book" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Замовити →</button>
-    </div>
-    <div class="pkg-card">
-      <i class="pkg-icon ti ti-trophy"></i>
-      <div class="pkg-name">Топ</div>
-      <div class="pkg-price">700 <span class="pkg-unit">грн/день</span></div>
-      <div class="pkg-items">
-        <div class="pkg-item"><i class="ti ti-check"></i>Лижі топ-клас</div>
-        <div class="pkg-item"><i class="ti ti-check"></i>Черевики</div>
-        <div class="pkg-item"><i class="ti ti-check"></i>Шолом</div>
-        <div class="pkg-item"><i class="ti ti-check"></i>Палиці</div>
-      </div>
-      <button class="pkg-book" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Замовити →</button>
-    </div>
+    <div class="pkg-card"><i class="pkg-icon ti ti-mountain"></i><div class="pkg-name">Стандарт</div><div class="pkg-price">400 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Лижі</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div><div class="pkg-item"><i class="ti ti-check"></i>Палиці</div></div><button class="pkg-book" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Замовити →</button></div>
+    <div class="pkg-card featured"><div class="pkg-badge">⭐ Найпопулярніший</div><i class="pkg-icon ti ti-star"></i><div class="pkg-name">Преміум</div><div class="pkg-price">500 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Лижі преміум</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div><div class="pkg-item"><i class="ti ti-check"></i>Палиці</div></div><button class="pkg-book" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Замовити →</button></div>
+    <div class="pkg-card"><i class="pkg-icon ti ti-trophy"></i><div class="pkg-name">Топ</div><div class="pkg-price">700 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Лижі топ-клас</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div><div class="pkg-item"><i class="ti ti-check"></i>Палиці</div></div><button class="pkg-book" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Замовити →</button></div>
   </div>
   <div class="pkg-grid" id="pkg-snow">
     <div class="pkg-card"><i class="pkg-icon ti ti-snowflake"></i><div class="pkg-name">Сноуборд Стандарт</div><div class="pkg-price">400 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Сноуборд</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div></div><button class="pkg-book" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Замовити →</button></div>
@@ -332,7 +285,7 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
   </div>
   <div class="pkg-grid" id="pkg-kids">
     <div class="pkg-card featured"><div class="pkg-badge">👶 Для дітей</div><i class="pkg-icon ti ti-heart"></i><div class="pkg-name">Дитячі лижі Стандарт</div><div class="pkg-price">300 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Дитячі лижі</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div><div class="pkg-item"><i class="ti ti-check"></i>Палиці</div></div><button class="pkg-book" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Замовити →</button></div>
-    <div class="pkg-card"><i class="pkg-icon ti ti-star"></i><div class="pkg-name">Дитячі лижі Преміум</div><div class="pkg-price">400 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Лижі преміум дит.</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div><div class="pkg-item"><i class="ti ti-check"></i>Палиці</div></div><button class="pkg-book" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Замовити →</button></div>
+    <div class="pkg-card"><i class="pkg-icon ti ti-star"></i><div class="pkg-name">Дитячі лижі Преміум</div><div class="pkg-price">400 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Лижі преміум</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div><div class="pkg-item"><i class="ti ti-check"></i>Палиці</div></div><button class="pkg-book" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Замовити →</button></div>
     <div class="pkg-card"><i class="pkg-icon ti ti-snowflake"></i><div class="pkg-name">Сноуборд дитячий</div><div class="pkg-price">300 <span class="pkg-unit">грн/день</span></div><div class="pkg-items"><div class="pkg-item"><i class="ti ti-check"></i>Сноуборд дитячий</div><div class="pkg-item"><i class="ti ti-check"></i>Черевики</div><div class="pkg-item"><i class="ti ti-check"></i>Шолом</div></div><button class="pkg-book" onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">Замовити →</button></div>
   </div>
   <div class="pkg-grid" id="pkg-other">
@@ -343,31 +296,31 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
 
 <div class="divider"></div>
 
-<!-- PHOTO GALLERY -->
+<!-- GALLERY — виправлена -->
 <section class="section" id="gallery">
   <div class="sec-chip">📸 Галерея</div>
   <div class="sec-title">Карпати чекають!</div>
-  <div class="sec-sub">Засніжені схили, чисте повітря і море драйву — все це X-drive</div>
+  <div class="sec-sub">Засніжені схили, чисте гірське повітря і море драйву</div>
   <div class="gallery">
-    <div class="gallery-item tall">
-      <img src="https://images.unsplash.com/photo-1517131457189-f9ae338e3d34?w=800&q=80&auto=format" alt="Лижник на схилі">
-      <div class="gallery-label">Буковель · Карпати</div>
+    <div class="gi big">
+      <img src="https://images.unsplash.com/photo-1517131457189-f9ae338e3d34?w=700&h=404&fit=crop&crop=center&auto=format&q=85" alt="Лижник на схилі">
+      <div class="gi-label">🎿 Буковель · Карпати</div>
     </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1610386762628-4f3d1e0dc1b5?w=600&q=80&auto=format" alt="Сноубордист">
-      <div class="gallery-label">Сноубординг</div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1610386762628-4f3d1e0dc1b5?w=500&h=200&fit=crop&crop=center&auto=format&q=85" alt="Сноубордист">
+      <div class="gi-label">🏂 Сноубординг</div>
     </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=600&q=80&auto=format" alt="Зимові гори">
-      <div class="gallery-label">Зимові вершини</div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=500&h=200&fit=crop&crop=top&auto=format&q=85" alt="Зимові вершини">
+      <div class="gi-label">🏔 Зимові вершини</div>
     </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1547016497-f8a578c5ca71?w=600&q=80&auto=format" alt="Лижний спуск">
-      <div class="gallery-label">Гірський спуск</div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1547016497-f8a578c5ca71?w=500&h=200&fit=crop&crop=center&auto=format&q=85" alt="Гірський спуск">
+      <div class="gi-label">⛷ Гірський спуск</div>
     </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?w=600&q=80&auto=format" alt="Прокат лиж">
-      <div class="gallery-label">Спорядження</div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500&h=200&fit=crop&crop=center&auto=format&q=85" alt="Прокат спорядження">
+      <div class="gi-label">🎿 Спорядження</div>
     </div>
   </div>
 </section>
@@ -395,24 +348,26 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
   <div class="sec-chip">💎 Переваги</div>
   <div class="sec-title">Чому обирають X-drive?</div>
   <div class="adv-grid">
-    <div class="adv-card"><div class="adv-icon"><i class="ti ti-shield-check"></i></div><div><div class="adv-title">0 грн за поломку</div><div class="adv-desc">Ремонт і заміна спорядження за рахунок прокату — без жодних штрафів і доплат</div></div></div>
-    <div class="adv-card"><div class="adv-icon"><i class="ti ti-tools"></i></div><div><div class="adv-title">Топовий сервіс</div><div class="adv-desc">Montana (Швейцарія) та Reichmann (Німеччина) — найкращі верстати для заточки лиж</div></div></div>
-    <div class="adv-card"><div class="adv-icon"><i class="ti ti-clock"></i></div><div><div class="adv-title">45 клієнтів/годину</div><div class="adv-desc">Швидке обслуговування без черг — більше часу на схилах, менше у черзі</div></div></div>
-    <div class="adv-card"><div class="adv-icon"><i class="ti ti-discount"></i></div><div><div class="adv-title">Знижки та акції</div><div class="adv-desc">Для груп, захисників України, постійних клієнтів та корпоративного відпочинку</div></div></div>
-    <div class="adv-card"><div class="adv-icon"><i class="ti ti-parking"></i></div><div><div class="adv-title">Просторе паркування</div><div class="adv-desc">Зручні безкоштовні місця для автомобілів біля кожної точки прокату</div></div></div>
-    <div class="adv-card"><div class="adv-icon"><i class="ti ti-backpack"></i></div><div><div class="adv-title">Зберігання речей</div><div class="adv-desc">Залиш особисті речі у прокаті поки катаєшся — безкоштовно і безпечно</div></div></div>
+    <div class="adv-card"><div class="adv-icon"><i class="ti ti-shield-check"></i></div><div><div class="adv-title">0 грн за поломку</div><div class="adv-desc">Ремонт і заміна за рахунок прокату — без жодних штрафів і доплат</div></div></div>
+    <div class="adv-card"><div class="adv-icon"><i class="ti ti-tools"></i></div><div><div class="adv-title">Топовий сервіс</div><div class="adv-desc">Montana (Швейцарія) та Reichmann (Німеччина) — найкращі верстати</div></div></div>
+    <div class="adv-card"><div class="adv-icon"><i class="ti ti-clock"></i></div><div><div class="adv-title">45 клієнтів/год</div><div class="adv-desc">Швидке обслуговування — більше часу на схилах, менше у черзі</div></div></div>
+    <div class="adv-card"><div class="adv-icon"><i class="ti ti-discount"></i></div><div><div class="adv-title">Знижки та акції</div><div class="adv-desc">Для груп, захисників, постійних клієнтів і корпоративного відпочинку</div></div></div>
+    <div class="adv-card"><div class="adv-icon"><i class="ti ti-parking"></i></div><div><div class="adv-title">Зручне паркування</div><div class="adv-desc">Безкоштовні місця для авто біля кожної точки прокату</div></div></div>
+    <div class="adv-card"><div class="adv-icon"><i class="ti ti-backpack"></i></div><div><div class="adv-title">Зберігання речей</div><div class="adv-desc">Залиш особисті речі у прокаті поки катаєшся — безкоштовно</div></div></div>
   </div>
 </section>
 
-<!-- CTA BANNER -->
+<!-- CTA BANNER — менший -->
 <div class="cta-banner">
-  <img src="https://images.unsplash.com/photo-1543807535-eceef0bc6599?w=1400&q=80&auto=format" alt="Карпати зима лижі" loading="lazy">
-  <div class="cta-banner-overlay">
-    <div class="cta-content">
-      <h2>Готовий до<br>пригод у горах? 🏔</h2>
-      <p>Залиш заявку — менеджер зв'яжеться з тобою за 15 хвилин і підбере ідеальне спорядження</p>
-      <a href="#form" class="btn-primary" style="display:inline-flex"><i class="ti ti-brand-telegram" style="font-size:18px"></i>Замовити прокат</a>
-      <div class="cta-phones">
+  <div class="cta-banner-inner">
+    <img src="https://images.unsplash.com/photo-1543807535-eceef0bc6599?w=1400&h=400&fit=crop&crop=center&auto=format&q=80" alt="Карпати зима лижі" loading="lazy">
+    <div class="cta-overlay">
+      <div class="cta-text">
+        <h2>Готовий до пригод<br>у горах? 🏔</h2>
+        <p>Залиш заявку — підберемо ідеальне спорядження і зв'яжемось за 15 хвилин</p>
+      </div>
+      <div class="cta-actions">
+        <a href="#form" class="btn-primary" style="font-size:14px;padding:12px 22px"><i class="ti ti-brand-telegram" style="font-size:16px"></i>Замовити прокат</a>
         <a class="cta-phone" href="tel:0987863830"><i class="ti ti-phone"></i>098 786 3830</a>
         <a class="cta-phone" href="tel:0677785878"><i class="ti ti-phone"></i>067 778 5878</a>
       </div>
@@ -430,7 +385,7 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
       <div class="tg-icon"><i class="ti ti-brand-telegram"></i></div>
       <div>
         <div class="fh-title">Заявка надходить прямо в Telegram</div>
-        <div class="fh-sub">Менеджер зв'яжеться з вами особисто протягом 15 хвилин</div>
+        <div class="fh-sub">Менеджер зв'яжеться з вами протягом 15 хвилин</div>
       </div>
     </div>
     <div id="form-body">
@@ -438,8 +393,7 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
         <div class="field"><label>ІМ'Я *</label><input type="text" id="f-name" placeholder="Олексій"></div>
         <div class="field"><label>ТЕЛЕФОН / TELEGRAM *</label><input type="tel" id="f-phone" placeholder="+380__________"></div>
       </div>
-      <div class="field">
-        <label>КОМПЛЕКТ</label>
+      <div class="field"><label>КОМПЛЕКТ</label>
         <select id="f-pkg" onchange="updatePreview()">
           <option value="ski-std" data-price="400">Лижі Стандарт — 400 грн/день</option>
           <option value="ski-prm" data-price="500">Лижі Преміум — 500 грн/день</option>
@@ -482,7 +436,7 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
           <div class="chip" onclick="selChip(this)">Професіонал</div>
         </div>
       </div>
-      <div class="field"><label>КІЛЬКІСТЬ ЛЮДЕЙ ТА ПОБАЖАННЯ</label>
+      <div class="field"><label>ПОБАЖАННЯ</label>
         <textarea id="f-note" rows="3" placeholder="Напр.: 2 дорослих + 1 дитина 8 років, зріст 170 см, потрібні костюми..."></textarea>
       </div>
       <div class="price-box"><div id="price-preview" style="font-size:14px;color:#A8DCFF;line-height:1.9"></div></div>
@@ -500,7 +454,6 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -515,15 +468,14 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
         <a href="#locations">Локації</a>
         <a href="#advantages">Переваги</a>
         <a href="https://x-drive.ua/service" target="_blank">Сервіс лиж</a>
-        <a href="https://x-drive.ua/choose-ski" target="_blank">Як вибрати лижі</a>
       </div>
       <div class="footer-contacts footer-links">
         <h4>Контакти</h4>
-        <a href="tel:0987863830"><i class="ti ti-phone" style="font-size:16px"></i>098 786 3830</a>
-        <a href="tel:0677785878"><i class="ti ti-phone" style="font-size:16px"></i>067 778 5878</a>
-        <a href="https://t.me/joinchat/DZviZEswGDShHZWzNrR2mQ" target="_blank"><i class="ti ti-brand-telegram" style="font-size:16px"></i>Telegram-канал</a>
-        <a href="https://g.page/r/CW6mxi8AGC5dEAg/review" target="_blank"><i class="ti ti-star" style="font-size:16px"></i>Залишити відгук</a>
-        <a href="https://x-drive.ua" target="_blank"><i class="ti ti-world" style="font-size:16px"></i>x-drive.ua</a>
+        <a href="tel:0987863830"><i class="ti ti-phone" style="font-size:15px"></i>098 786 3830</a>
+        <a href="tel:0677785878"><i class="ti ti-phone" style="font-size:15px"></i>067 778 5878</a>
+        <a href="https://t.me/joinchat/DZviZEswGDShHZWzNrR2mQ" target="_blank"><i class="ti ti-brand-telegram" style="font-size:15px"></i>Telegram-канал</a>
+        <a href="https://g.page/r/CW6mxi8AGC5dEAg/review" target="_blank"><i class="ti ti-star" style="font-size:15px"></i>Залишити відгук</a>
+        <a href="https://x-drive.ua" target="_blank"><i class="ti ti-world" style="font-size:15px"></i>x-drive.ua</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -538,30 +490,34 @@ const TG_TOKEN='8821919239:AAE3WsICaw24iGmBUnEECpxFPhjUour_hG4';
 const TG_CHAT='1314734890';
 const TG_API='https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage';
 
-// Сніжинки
 function createSnow(){
   const c=document.getElementById('snowflakes');
   if(!c)return;
-  const chars=['❄','❅','❆','✦','·','*'];
-  for(let i=0;i<28;i++){
-    const s=document.createElement('span');
-    s.className='sf';
-    s.textContent=chars[Math.floor(Math.random()*chars.length)];
-    s.style.cssText=`left:${Math.random()*100}%;font-size:${8+Math.random()*16}px;animation-duration:${5+Math.random()*10}s;animation-delay:${Math.random()*8}s;opacity:${0.4+Math.random()*0.6}`;
-    c.appendChild(s);
-  }
+  ['❄','❅','❆','·','*','✦'].forEach((ch,i)=>{
+    for(let j=0;j<5;j++){
+      const s=document.createElement('span');
+      s.className='sf';
+      s.textContent=ch;
+      s.style.cssText=`left:${Math.random()*100}%;font-size:${8+Math.random()*14}px;animation-duration:${6+Math.random()*10}s;animation-delay:${Math.random()*10}s;opacity:${0.4+Math.random()*0.5}`;
+      c.appendChild(s);
+    }
+  });
 }
 createSnow();
 
 function toggleMenu(){document.getElementById('nav-mobile').classList.toggle('open')}
-function showPkg(type,btn){document.querySelectorAll('.pkg-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.pkg-grid').forEach(g=>g.classList.remove('active'));btn.classList.add('active');document.getElementById('pkg-'+type).classList.add('active')}
+function showPkg(type,btn){
+  document.querySelectorAll('.pkg-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.pkg-grid').forEach(g=>g.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('pkg-'+type).classList.add('active');
+}
 function selChip(el){document.querySelectorAll('.chip').forEach(c=>c.classList.remove('sel'));el.classList.add('sel')}
 
 function calcTotal(price,days){
   const m=[1,2,2.85,3.6,4.25,4.8,5.25];
   if(days===0.5)return Math.round(price*0.75);
-  const idx=Math.min(Math.round(days)-1,m.length-1);
-  return Math.round(price*m[idx]);
+  return Math.round(price*m[Math.min(Math.round(days)-1,m.length-1)]);
 }
 
 function updatePreview(){
@@ -575,7 +531,7 @@ function updatePreview(){
   document.getElementById('price-preview').innerHTML=
     '<strong style="color:#fff">'+label+'</strong> · '+dl+' · 📍 '+loc+'<br>'+
     '<span style="font-size:26px;font-weight:900;color:#4DB8FF">~'+total.toLocaleString('uk-UA')+' грн</span>'+
-    '<span style="color:rgba(255,255,255,0.3);font-size:12px;font-weight:500"> (орієнтовно, без застави)</span>';
+    '<span style="color:rgba(255,255,255,0.3);font-size:12px"> (орієнтовно, без застави)</span>';
 }
 
 async function submitForm(){
@@ -596,12 +552,12 @@ async function submitForm(){
   const level=document.querySelector('.chip.sel')?.textContent||'—';
   const total=calcTotal(price,days);
   const dl=days===0.5?'Пів дня':days+(days===1?' день':days<5?' дні':' днів');
-  const text='🎿 *Нова заявка X-drive*\n\n'+'👤 Ім\'я: '+name+'\n'+'📞 Телефон: '+phone+'\n'+(date?'📅 Дата заїзду: '+date+'\n':'')+'⏱ Термін: '+dl+'\n'+'📍 Локація: '+loc+'\n'+'🎿 Комплект: '+label+'\n'+'⭐ Рівень: '+level+'\n'+'💰 Орієнтовна вартість: ~'+total.toLocaleString('uk-UA')+' грн\n'+(note?'📝 Побажання: '+note+'\n':'')+'\n🌐 Заявка з сайту x-drive.ua';
+  const text='🎿 *Нова заявка X-drive*\n\n'+'👤 Ім\'я: '+name+'\n'+'📞 Телефон: '+phone+'\n'+(date?'📅 Дата: '+date+'\n':'')+'⏱ Термін: '+dl+'\n'+'📍 Локація: '+loc+'\n'+'🎿 Комплект: '+label+'\n'+'⭐ Рівень: '+level+'\n'+'💰 Вартість: ~'+total.toLocaleString('uk-UA')+' грн\n'+(note?'📝 Побажання: '+note+'\n':'')+'\n🌐 Заявка з сайту x-drive.ua';
   const btn=document.getElementById('submit-btn');
   btn.disabled=true;
   btn.innerHTML='<i class="ti ti-loader-2" style="font-size:22px"></i> Надсилаємо...';
   try{
-    const resp=await fetch(TG_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:TG_CHAT,text:text,parse_mode:'Markdown'})});
+    const resp=await fetch(TG_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:TG_CHAT,text,parse_mode:'Markdown'})});
     const data=await resp.json();
     if(data.ok){document.getElementById('form-body').style.display='none';document.getElementById('success-box').classList.add('show')}
     else{errTx.textContent='Помилка: '+(data.description||'спробуйте ще раз');errEl.style.display='flex';btn.disabled=false;btn.innerHTML='<i class="ti ti-brand-telegram" style="font-size:22px"></i> Надіслати заявку в Telegram'}
