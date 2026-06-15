@@ -13,7 +13,6 @@
 html{scroll-behavior:smooth}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--night);color:var(--white);line-height:1.6}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(77,184,255,0.12);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
 .nav-logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:var(--white);text-decoration:none}
 .nav-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#4DB8FF,#0080CC);border-radius:9px;display:flex;align-items:center;justify-content:center}
@@ -27,7 +26,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.88
 .nav-mobile.open{display:flex}
 .nav-mobile a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:16px;font-weight:500}
 
-/* HERO */
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;padding-top:64px}
 .hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;z-index:0}
 .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(6,14,26,0.3) 0%,rgba(6,14,26,0.15) 35%,rgba(6,14,26,0.7) 70%,rgba(6,14,26,1) 100%)}
@@ -35,7 +33,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.88
 .sf{position:absolute;color:rgba(255,255,255,0.75);animation:snowfall linear infinite}
 @keyframes snowfall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
 .hero-content{position:relative;z-index:3;padding:3rem 2rem 4rem;max-width:1100px;margin:0 auto;width:100%}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(77,184,255,0.18);border:1px solid rgba(77,184,255,0.45);border-radius:24px;padding:7px 18px;font-size:13px;color:var(--ice2);margin-bottom:1.5rem;font-weight:600;letter-spacing:.5px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(77,184,255,0.18);border:1px solid rgba(77,184,255,0.45);border-radius:24px;padding:7px 18px;font-size:13px;color:var(--ice2);margin-bottom:1.5rem;font-weight:600}
 .hero h1{font-size:clamp(36px,6vw,70px);font-weight:900;line-height:1.05;margin-bottom:1rem;letter-spacing:-1.5px}
 .hero h1 .accent{background:linear-gradient(135deg,#4DB8FF,#A8DCFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:clamp(15px,2vw,18px);color:rgba(255,255,255,0.82);margin-bottom:2.5rem;max-width:560px;line-height:1.65}
@@ -48,27 +46,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.88
 .hstat-num{font-size:28px;font-weight:900;color:var(--ice);line-height:1;letter-spacing:-1px}
 .hstat-label{font-size:12px;color:rgba(255,255,255,0.55);margin-top:3px;font-weight:500}
 
-/* STATS BAR */
+/* PHOTO STRIP */
+.photo-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;background:var(--night)}
+.ps-item{position:relative;overflow:hidden;height:220px;background:var(--night2)}
+.ps-item img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .5s}
+.ps-item:hover img{transform:scale(1.06)}
+.ps-item .ps-label{position:absolute;bottom:0;left:0;right:0;padding:.6rem .9rem;background:linear-gradient(to top,rgba(6,14,26,0.9),transparent);font-size:13px;font-weight:700;color:#fff}
+.ps-item .ps-fallback{display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;color:var(--ice);font-size:13px;font-weight:600;text-align:center;padding:1rem}
+.ps-item .ps-fallback i{font-size:40px;opacity:.6}
+
 .stats-bar{background:linear-gradient(135deg,#0096E8,#0050A0);padding:1.75rem 2rem}
 .stats-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1.25rem;max-width:960px;margin:0 auto;text-align:center}
 .stat-num{font-size:32px;font-weight:900;color:#fff;letter-spacing:-1px}
 .stat-label{font-size:12px;color:rgba(255,255,255,0.75);margin-top:3px;font-weight:500}
 
-/* SECTION */
 .section{padding:4rem 2rem;max-width:1060px;margin:0 auto}
 .sec-chip{display:inline-block;background:rgba(77,184,255,0.12);border:1px solid rgba(77,184,255,0.3);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--ice);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:.75rem}
 .sec-title{font-size:clamp(24px,3.5vw,36px);font-weight:900;margin-bottom:.5rem;letter-spacing:-.5px}
 .sec-sub{font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:2rem;max-width:520px}
 .divider{height:1px;background:linear-gradient(to right,transparent,rgba(77,184,255,0.15),transparent)}
 
-/* PHOTO STRIP — виправлена */
-.photo-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px}
-.photo-strip-item{position:relative;overflow:hidden;height:200px}
-.photo-strip-item img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s;display:block}
-.photo-strip-item:hover img{transform:scale(1.05)}
-.strip-label{position:absolute;bottom:0;left:0;right:0;padding:.5rem .75rem;background:linear-gradient(to top,rgba(6,14,26,0.85),transparent);font-size:12px;font-weight:700;color:#fff;letter-spacing:.5px}
-
-/* PACKAGES */
 .pkg-tabs{display:flex;gap:8px;margin-bottom:2rem;flex-wrap:wrap}
 .pkg-tab{padding:10px 22px;border-radius:24px;border:1.5px solid rgba(77,184,255,0.2);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
 .pkg-tab.active,.pkg-tab:hover{background:rgba(77,184,255,0.15);border-color:var(--ice);color:var(--ice2)}
@@ -83,20 +80,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.88
 .pkg-price{font-size:30px;font-weight:900;color:var(--ice);line-height:1;letter-spacing:-1px}
 .pkg-unit{font-size:13px;color:rgba(255,255,255,0.4);font-weight:500}
 .pkg-items{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(77,184,255,0.12)}
-.pkg-item{font-size:13px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:8px;margin-bottom:6px;font-weight:500}
+.pkg-item{font-size:13px;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:8px;margin-bottom:6px}
 .pkg-item i{color:var(--teal);font-size:15px;flex-shrink:0}
 .pkg-book{width:100%;margin-top:1.25rem;padding:11px;background:rgba(77,184,255,0.12);color:var(--ice);border:1px solid rgba(77,184,255,0.3);border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s}
 .pkg-book:hover{background:var(--ice);color:#060E1A}
 
-/* GALLERY — виправлена сітка */
+/* GALLERY */
 .gallery{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:200px 200px;gap:4px}
-.gi{overflow:hidden;position:relative}
+.gi{overflow:hidden;position:relative;background:var(--night2)}
 .gi img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .5s}
 .gi:hover img{transform:scale(1.06)}
 .gi-label{position:absolute;bottom:0;left:0;right:0;padding:.6rem .9rem;background:linear-gradient(to top,rgba(6,14,26,0.9),transparent);font-size:12px;font-weight:700;color:#fff}
 .gi.big{grid-column:1;grid-row:1/3}
+.gi-fallback{display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;color:var(--ice);font-size:13px;font-weight:600;text-align:center;padding:1rem}
+.gi-fallback i{font-size:36px;opacity:.5}
 
-/* LOCATIONS */
 .loc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
 .loc-card{background:linear-gradient(145deg,#0F2035,#0A1828);border:1px solid rgba(77,184,255,0.15);border-radius:16px;padding:1.5rem;text-align:center;text-decoration:none;color:var(--white);display:block;transition:all .3s}
 .loc-card:hover{border-color:var(--ice);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
@@ -104,7 +102,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.88
 .loc-name{font-size:15px;font-weight:800}
 .loc-sub{font-size:12px;color:rgba(255,255,255,0.45);margin-top:3px}
 
-/* ADVANTAGES */
 .adv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .adv-card{background:linear-gradient(145deg,#0F2035,#0A1828);border:1px solid rgba(77,184,255,0.12);border-radius:16px;padding:1.5rem;display:flex;gap:16px;align-items:flex-start;transition:border-color .3s}
 .adv-card:hover{border-color:rgba(77,184,255,0.4)}
@@ -113,25 +110,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.88
 .adv-title{font-size:15px;font-weight:800;margin-bottom:5px}
 .adv-desc{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6}
 
-/* CTA BANNER — менший */
-.cta-banner{max-width:1060px;margin:0 auto 0;padding:0 2rem}
-.cta-banner-inner{border-radius:20px;overflow:hidden;position:relative;height:200px}
+/* CTA BANNER */
+.cta-banner{max-width:1060px;margin:0 auto;padding:0 2rem}
+.cta-banner-inner{border-radius:20px;overflow:hidden;position:relative;height:200px;background:linear-gradient(135deg,#0F2035,#0050A0)}
 .cta-banner-inner img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
 .cta-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,14,26,0.88) 0%,rgba(0,80,160,0.65) 100%);display:flex;align-items:center;padding:2rem 2.5rem;gap:2rem}
-.cta-text h2{font-size:clamp(18px,2.5vw,26px);font-weight:900;margin-bottom:.4rem;letter-spacing:-.3px}
+.cta-text h2{font-size:clamp(18px,2.5vw,26px);font-weight:900;margin-bottom:.4rem}
 .cta-text p{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.55}
 .cta-actions{display:flex;flex-direction:column;gap:.6rem;flex-shrink:0}
 .cta-phone{display:flex;align-items:center;gap:7px;color:var(--ice2);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
 .cta-phone:hover{color:var(--ice)}
-.cta-phone i{font-size:16px}
 
-/* FORM */
 .form-wrapper{background:linear-gradient(145deg,#0F2035,#0A1828);border:1px solid rgba(77,184,255,0.2);border-radius:20px;padding:2.5rem;max-width:720px;margin:0 auto}
 .form-header{display:flex;align-items:center;gap:14px;margin-bottom:2rem}
 .tg-icon{width:48px;height:48px;background:linear-gradient(135deg,#2AABEE,#1a8fc7);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 24px rgba(42,171,238,0.3)}
 .tg-icon i{font-size:24px;color:#fff}
 .fh-title{font-size:18px;font-weight:900;letter-spacing:-.3px}
-.fh-sub{font-size:13px;color:rgba(255,255,255,0.45);font-weight:500}
+.fh-sub{font-size:13px;color:rgba(255,255,255,0.45)}
 .field{margin-bottom:1.1rem}
 .field label{display:block;font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:6px;font-weight:700;letter-spacing:.5px}
 .field input,.field select,.field textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(77,184,255,0.2);border-radius:12px;padding:12px 15px;font-size:15px;color:var(--white);font-family:inherit;outline:none;transition:all .2s;appearance:none}
@@ -156,7 +151,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.88
 .success-title{font-size:24px;font-weight:900;margin-bottom:.5rem}
 .success-sub{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7}
 
-/* FOOTER */
 footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid rgba(77,184,255,0.1);padding:3rem 2rem 2rem;margin-top:4rem}
 .footer-inner{max-width:1060px;margin:0 auto}
 .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:2rem}
@@ -175,13 +169,12 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
   .hero-content{padding:2rem 1.25rem 3rem}
   .hero-stats{gap:1.5rem}
   .photo-strip{grid-template-columns:1fr 1fr}
-  .photo-strip-item:last-child{display:none}
+  .ps-item:last-child{display:none}
   .gallery{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px}
-  .gi.big{grid-column:1 2;grid-row:1}
+  .gi.big{grid-column:span 2;grid-row:1}
   .field-row{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr}
-  .cta-banner-inner{height:auto}
-  .cta-overlay{flex-direction:column;align-items:flex-start;padding:1.5rem}
+  .cta-overlay{flex-direction:column;padding:1.5rem}
   .section{padding:3rem 1.25rem}
   .form-wrapper{padding:1.5rem}
 }
@@ -211,11 +204,11 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
   <a href="#form" onclick="toggleMenu()" style="color:#4DB8FF;font-weight:800">🎿 Замовити прокат</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <img class="hero-bg-img"
-    src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1600&q=90&auto=format&fit=crop"
-    alt="Зимові гори Карпати" loading="eager">
+    src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1600&q=90&auto=format&fit=crop&crop=center"
+    alt="Зимові гори Карпати" loading="eager"
+    onerror="this.src='https://images.unsplash.com/photo-1457741913680-7a46a3e84e7b?w=1600&q=90&auto=format&fit=crop'">
   <div class="hero-overlay"></div>
   <div class="snowflakes" id="snowflakes"></div>
   <div class="hero-content">
@@ -235,23 +228,31 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
   </div>
 </section>
 
-<!-- PHOTO STRIP -->
+<!-- PHOTO STRIP — 3 фото з fallback -->
 <div class="photo-strip">
-  <div class="photo-strip-item">
-    <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=700&h=400&fit=crop&auto=format&q=85" alt="Лижник на схилі">
-    <div class="strip-label">🎿 Гірські лижі</div>
+  <div class="ps-item">
+    <img src="https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=700&h=440&fit=crop&crop=center&auto=format&q=85"
+         alt="Лижник на схилі"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="ps-fallback"><i class="ti ti-mountain"></i>Лижник на схилі</div>
+    <div class="ps-label">🎿 Лижі</div>
   </div>
-  <div class="photo-strip-item">
-    <img src="https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?w=700&h=400&fit=crop&auto=format&q=85&crop=center" alt="Сноубордист">
-    <div class="strip-label">🏂 Сноуборд</div>
+  <div class="ps-item">
+    <img src="https://images.unsplash.com/photo-1531147646552-1adeecaa36b0?w=700&h=440&fit=crop&crop=center&auto=format&q=85"
+         alt="Сноубордист"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="ps-fallback"><i class="ti ti-snowflake"></i>Сноубордист</div>
+    <div class="ps-label">🏂 Сноуборд</div>
   </div>
-  <div class="photo-strip-item">
-    <img src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=700&h=400&fit=crop&auto=format&q=85&crop=center" alt="Зимові гори">
-    <div class="strip-label">🏔 Карпати</div>
+  <div class="ps-item">
+    <img src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=700&h=440&fit=crop&crop=top&auto=format&q=85"
+         alt="Зимові гори"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="ps-fallback"><i class="ti ti-mountain"></i>Зимові гори</div>
+    <div class="ps-label">🏔 Карпати</div>
   </div>
 </div>
 
-<!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stats-inner">
     <div><div class="stat-num">30+</div><div class="stat-label">Років на ринку</div></div>
@@ -262,7 +263,6 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
   </div>
 </div>
 
-<!-- PACKAGES -->
 <section class="section" id="packages">
   <div class="sec-chip">🎿 Оренда спорядження</div>
   <div class="sec-title">Оберіть свій комплект</div>
@@ -296,38 +296,52 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
 
 <div class="divider"></div>
 
-<!-- GALLERY — виправлена -->
+<!-- GALLERY — 5 перевірених фото з fallback -->
 <section class="section" id="gallery">
   <div class="sec-chip">📸 Галерея</div>
   <div class="sec-title">Карпати чекають!</div>
   <div class="sec-sub">Засніжені схили, чисте гірське повітря і море драйву</div>
   <div class="gallery">
     <div class="gi big">
-      <img src="https://images.unsplash.com/photo-1517131457189-f9ae338e3d34?w=700&h=404&fit=crop&crop=center&auto=format&q=85" alt="Лижник на схилі">
+      <img src="https://images.unsplash.com/photo-1453847668862-487637052f8a?w=700&h=404&fit=crop&crop=center&auto=format&q=85"
+           alt="Лижник на схилі"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="gi-fallback"><i class="ti ti-mountain"></i>Лижник на схилі</div>
       <div class="gi-label">🎿 Буковель · Карпати</div>
     </div>
     <div class="gi">
-      <img src="https://images.unsplash.com/photo-1610386762628-4f3d1e0dc1b5?w=500&h=200&fit=crop&crop=center&auto=format&q=85" alt="Сноубордист">
+      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=500&h=200&fit=crop&crop=center&auto=format&q=85"
+           alt="Сноубордист"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="gi-fallback"><i class="ti ti-snowflake"></i>Сноубордист</div>
       <div class="gi-label">🏂 Сноубординг</div>
     </div>
     <div class="gi">
-      <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=500&h=200&fit=crop&crop=top&auto=format&q=85" alt="Зимові вершини">
+      <img src="https://images.unsplash.com/photo-1520608760-eff2c44d8c84?w=500&h=200&fit=crop&crop=center&auto=format&q=85"
+           alt="Зимові вершини"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="gi-fallback"><i class="ti ti-mountain"></i>Зимові вершини</div>
       <div class="gi-label">🏔 Зимові вершини</div>
     </div>
     <div class="gi">
-      <img src="https://images.unsplash.com/photo-1547016497-f8a578c5ca71?w=500&h=200&fit=crop&crop=center&auto=format&q=85" alt="Гірський спуск">
+      <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=500&h=200&fit=crop&crop=center&auto=format&q=85"
+           alt="Гірський спуск"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="gi-fallback"><i class="ti ti-chevrons-down"></i>Гірський спуск</div>
       <div class="gi-label">⛷ Гірський спуск</div>
     </div>
     <div class="gi">
-      <img src="https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500&h=200&fit=crop&crop=center&auto=format&q=85" alt="Прокат спорядження">
-      <div class="gi-label">🎿 Спорядження</div>
+      <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=200&fit=crop&crop=center&auto=format&q=85"
+           alt="Прокат спорядження"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="gi-fallback"><i class="ti ti-backpack"></i>Прокат спорядження</div>
+      <div class="gi-label">🎿 Прокат спорядження</div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- LOCATIONS -->
 <section class="section" id="locations">
   <div class="sec-chip">📍 Локації</div>
   <div class="sec-title">Де нас знайти</div>
@@ -343,7 +357,6 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
 
 <div class="divider"></div>
 
-<!-- ADVANTAGES -->
 <section class="section" id="advantages">
   <div class="sec-chip">💎 Переваги</div>
   <div class="sec-title">Чому обирають X-drive?</div>
@@ -353,14 +366,15 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
     <div class="adv-card"><div class="adv-icon"><i class="ti ti-clock"></i></div><div><div class="adv-title">45 клієнтів/год</div><div class="adv-desc">Швидке обслуговування — більше часу на схилах, менше у черзі</div></div></div>
     <div class="adv-card"><div class="adv-icon"><i class="ti ti-discount"></i></div><div><div class="adv-title">Знижки та акції</div><div class="adv-desc">Для груп, захисників, постійних клієнтів і корпоративного відпочинку</div></div></div>
     <div class="adv-card"><div class="adv-icon"><i class="ti ti-parking"></i></div><div><div class="adv-title">Зручне паркування</div><div class="adv-desc">Безкоштовні місця для авто біля кожної точки прокату</div></div></div>
-    <div class="adv-card"><div class="adv-icon"><i class="ti ti-backpack"></i></div><div><div class="adv-title">Зберігання речей</div><div class="adv-desc">Залиш особисті речі у прокаті поки катаєшся — безкоштовно</div></div></div>
+    <div class="adv-card"><div class="adv-icon"><i class="ti ti-backpack"></i></div><div><div class="adv-title">Зберігання речей</div><div class="adv-desc">Залиш речі у прокаті поки катаєшся — безкоштовно і безпечно</div></div></div>
   </div>
 </section>
 
-<!-- CTA BANNER — менший -->
 <div class="cta-banner">
   <div class="cta-banner-inner">
-    <img src="https://images.unsplash.com/photo-1543807535-eceef0bc6599?w=1400&h=400&fit=crop&crop=center&auto=format&q=80" alt="Карпати зима лижі" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1458442310124-dde6edb43d10?w=1400&h=400&fit=crop&crop=center&auto=format&q=80"
+         alt="Карпати зима"
+         onerror="this.style.display='none'">
     <div class="cta-overlay">
       <div class="cta-text">
         <h2>Готовий до пригод<br>у горах? 🏔</h2>
@@ -375,7 +389,6 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
   </div>
 </div>
 
-<!-- FORM -->
 <section class="section" id="form" style="padding-bottom:5rem">
   <div class="sec-chip">📩 Онлайн-заявка</div>
   <div class="sec-title">Замовити прокат</div>
@@ -493,15 +506,14 @@ const TG_API='https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage';
 function createSnow(){
   const c=document.getElementById('snowflakes');
   if(!c)return;
-  ['❄','❅','❆','·','*','✦'].forEach((ch,i)=>{
-    for(let j=0;j<5;j++){
-      const s=document.createElement('span');
-      s.className='sf';
-      s.textContent=ch;
-      s.style.cssText=`left:${Math.random()*100}%;font-size:${8+Math.random()*14}px;animation-duration:${6+Math.random()*10}s;animation-delay:${Math.random()*10}s;opacity:${0.4+Math.random()*0.5}`;
-      c.appendChild(s);
-    }
-  });
+  const chars=['❄','❅','❆','·','*','✦'];
+  for(let i=0;i<30;i++){
+    const s=document.createElement('span');
+    s.className='sf';
+    s.textContent=chars[i%chars.length];
+    s.style.cssText=`left:${Math.random()*100}%;font-size:${8+Math.random()*14}px;animation-duration:${6+Math.random()*10}s;animation-delay:${Math.random()*10}s;opacity:${0.4+Math.random()*0.5}`;
+    c.appendChild(s);
+  }
 }
 createSnow();
 
