@@ -147,7 +147,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.88
 .pkg-book:hover{background:var(--ice);color:#060E1A}
 
 /* GALLERY */
-.gallery{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:200px 200px;gap:4px;grid-auto-flow:dense}
+.gallery{display:grid;grid-template-columns:1fr 1fr 1fr;grid-auto-rows:200px;gap:4px;grid-auto-flow:dense}
 .gi{overflow:hidden;position:relative;background:transparent}
 .gi img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .5s}
 .gi:hover img{transform:scale(1.06)}
@@ -205,12 +205,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(6,14,26,0.88
 .submit-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(77,184,255,0.5)}
 .submit-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
 
-.landscape-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.landscape-item{position:relative;overflow:hidden;border-radius:14px;height:220px;background:var(--night2)}
-.landscape-item img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .5s}
-.landscape-item:hover img{transform:scale(1.07)}
-.landscape-label{position:absolute;bottom:0;left:0;right:0;padding:.75rem .9rem;background:linear-gradient(to top,rgba(6,14,26,0.92),transparent);font-size:12px;font-weight:700;color:#fff}
-@media(max-width:768px){.landscape-grid{grid-template-columns:1fr 1fr}.landscape-item{height:160px}}
 .error-msg{font-size:13px;color:#FF6B6B;margin-top:.75rem;display:none;align-items:center;gap:6px;font-weight:600}
 .success-box{display:none;flex-direction:column;align-items:center;text-align:center;padding:3rem 1rem}
 .success-box.show{display:flex}
@@ -391,6 +385,30 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
            onerror="this.closest('.ps-item,.gi').style.display='none'">
       <div class="gi-label">⛷ Гірський спуск</div>
     </div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=400&h=200&fit=crop&crop=center&auto=format&q=85"
+           alt="Зимовий гірський пейзаж"
+           onerror="this.closest('.ps-item,.gi').style.display='none'">
+      <div class="gi-label">🏔 Вершини Карпат</div>
+    </div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=400&h=200&fit=crop&crop=center&auto=format&q=85"
+           alt="Гірськолижний підйомник"
+           onerror="this.closest('.ps-item,.gi').style.display='none'">
+      <div class="gi-label">🚡 Підйомник</div>
+    </div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1605723829100-5db77900e8a0?w=400&h=200&fit=crop&crop=center&auto=format&q=85"
+           alt="Засніжені схили курорту"
+           onerror="this.closest('.ps-item,.gi').style.display='none'">
+      <div class="gi-label">⛷ Гірський курорт</div>
+    </div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?w=400&h=200&fit=crop&crop=center&auto=format&q=85"
+           alt="Захід сонця в горах"
+           onerror="this.closest('.ps-item,.gi').style.display='none'">
+      <div class="gi-label">🌅 Захід над горами</div>
+    </div>
 
   </div>
 </section>
@@ -420,40 +438,6 @@ footer{background:linear-gradient(180deg,#060E1A,#03080F);border-top:1px solid r
     <div class="adv-card"><div class="adv-icon"><i class="ti ti-discount"></i></div><div><div class="adv-title">Знижки та акції</div><div class="adv-desc">Для груп, захисників, постійних клієнтів і корпоративного відпочинку</div></div></div>
     <div class="adv-card"><div class="adv-icon"><i class="ti ti-parking"></i></div><div><div class="adv-title">Зручне паркування</div><div class="adv-desc">Безкоштовні місця для авто біля кожної точки прокату</div></div></div>
     <div class="adv-card"><div class="adv-icon"><i class="ti ti-backpack"></i></div><div><div class="adv-title">Зберігання речей</div><div class="adv-desc">Залиш речі у прокаті поки катаєшся — безкоштовно і безпечно</div></div></div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="section" id="landscapes" style="padding-bottom:1.5rem">
-  <div class="sec-chip">🏔 Пейзажі</div>
-  <div class="sec-title">Краса зимових Карпат</div>
-  <div class="sec-sub">Гірські вершини, підйомники та безкінечні засніжені схили</div>
-  <div class="landscape-grid">
-    <div class="landscape-item">
-      <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=400&h=440&fit=crop&crop=center&auto=format&q=85"
-           alt="Зимовий гірський пейзаж"
-           onerror="this.closest('.landscape-item').style.display='none'">
-      <div class="landscape-label">🏔 Вершини Карпат</div>
-    </div>
-    <div class="landscape-item">
-      <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=400&h=440&fit=crop&crop=center&auto=format&q=85"
-           alt="Гірськолижний підйомник"
-           onerror="this.closest('.landscape-item').style.display='none'">
-      <div class="landscape-label">🚡 Підйомник</div>
-    </div>
-    <div class="landscape-item">
-      <img src="https://images.unsplash.com/photo-1605723829100-5db77900e8a0?w=400&h=440&fit=crop&crop=center&auto=format&q=85"
-           alt="Засніжені схили курорту"
-           onerror="this.closest('.landscape-item').style.display='none'">
-      <div class="landscape-label">⛷ Гірський курорт</div>
-    </div>
-    <div class="landscape-item">
-      <img src="https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?w=400&h=440&fit=crop&crop=center&auto=format&q=85"
-           alt="Захід сонця в горах"
-           onerror="this.closest('.landscape-item').style.display='none'">
-      <div class="landscape-label">🌅 Захід над горами</div>
-    </div>
   </div>
 </section>
 
